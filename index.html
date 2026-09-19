@@ -603,7 +603,7 @@
     }
 
     /* ========================================
-       PLACEHOLDERS PARA SECCIONES PENDIENTES
+       SECCIONES GENERALES
        ======================================== */
     section:not(.hero) {
       padding: var(--sp-xxl) var(--sp-md);
@@ -654,6 +654,300 @@
       opacity: 0.6;
     }
 
+    /* ========================================
+       ABOUT
+       ======================================== */
+    .about__content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about__text {
+      margin: 0 0 var(--sp-lg);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text);
+    }
+    .about__text:last-of-type {
+      margin-bottom: 0;
+    }
+    .about__highlight {
+      color: var(--color-primary);
+      font-weight: var(--fw-medium);
+    }
+
+    /* ========================================
+       PORTFOLIO
+       ======================================== */
+    .portfolio__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-md);
+    }
+    @media (min-width: 768px) {
+      .portfolio__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .portfolio__grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .project-card {
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-border);
+      border-radius: var(--rd-md);
+      overflow: hidden;
+      box-shadow: var(--elev-1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--elev-2);
+    }
+    .project-card__image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--color-primary-light);
+    }
+    .project-card__content {
+      padding: var(--sp-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-xs);
+    }
+    .project-card__category {
+      display: inline-block;
+      padding: var(--sp-xs) var(--sp-sm);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      border-radius: var(--rd-sm);
+      width: fit-content;
+    }
+    .project-card__title {
+      margin: 0;
+      font-family: var(--font-primary);
+      font-size: var(--fs-subheading);
+      font-weight: var(--fw-bold);
+      line-height: var(--lh-tight);
+      color: var(--color-text);
+    }
+    .project-card__description {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-normal);
+      color: var(--color-text-secondary);
+    }
+    .project-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      margin-top: var(--sp-xs);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .project-card__link:hover,
+    .project-card__link:focus {
+      color: var(--color-secondary);
+    }
+    .project-card__link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       PROCESS
+       ======================================== */
+    .process__steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-md);
+    }
+    @media (min-width: 768px) {
+      .process__steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .process__steps {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .process-step {
+      background: var(--color-bg);
+      border: 1px solid rgba(49, 85, 166, 0.1);
+      border-radius: var(--rd-md);
+      padding: var(--sp-lg) var(--sp-md);
+      text-align: center;
+      position: relative;
+    }
+    .process-step__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--color-primary);
+      color: var(--color-bg);
+      font-family: var(--font-primary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-bold);
+      border-radius: var(--rd-full);
+      margin-bottom: var(--sp-md);
+    }
+    .process-step__title {
+      margin: 0 0 var(--sp-xs);
+      font-family: var(--font-primary);
+      font-size: var(--fs-subheading);
+      font-weight: var(--fw-bold);
+      line-height: var(--lh-tight);
+      color: var(--color-text);
+    }
+    .process-step__description {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-normal);
+      color: var(--color-text-secondary);
+    }
+
+    /* ========================================
+       SKILLS
+       ======================================== */
+    .skills__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-xl);
+    }
+    .skills__group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+    }
+    .skills__group-title {
+      margin: 0;
+      font-family: var(--font-primary);
+      font-size: var(--fs-subheading);
+      font-weight: var(--fw-bold);
+      line-height: var(--lh-tight);
+      color: var(--color-text);
+      text-align: center;
+    }
+    .skills__tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--sp-sm);
+    }
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--sp-xs) var(--sp-md);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      border-radius: var(--rd-sm);
+      border: 1px solid var(--color-primary);
+    }
+    .skill-tag--tool {
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      border-color: rgba(49, 85, 166, 0.2);
+    }
+    .skill-tag--tool:hover {
+      background: var(--color-secondary-light);
+      color: var(--color-secondary);
+      border-color: var(--color-secondary);
+    }
+
+    /* ========================================
+       EDUCATION
+       ======================================== */
+    .education__content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .education__item {
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-border);
+      border-radius: var(--rd-md);
+      padding: var(--sp-lg) var(--sp-md);
+      text-align: center;
+    }
+    .education__degree {
+      margin: 0 0 var(--sp-xs);
+      font-family: var(--font-primary);
+      font-size: var(--fs-subheading);
+      font-weight: var(--fw-bold);
+      line-height: var(--lh-tight);
+      color: var(--color-text);
+    }
+    .education__detail {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text-secondary);
+    }
+
+    /* ========================================
+       CONTACT
+       ======================================== */
+    .contact__content {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact__text {
+      margin: 0 0 var(--sp-xl);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text-secondary);
+    }
+    .contact__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-md);
+    }
+    @media (min-width: 480px) {
+      .contact__actions {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+    .contact__btn {
+      min-width: 200px;
+    }
+    .contact__social {
+      display: flex;
+      gap: var(--sp-md);
+      margin-top: var(--sp-sm);
+    }
+
     /* Footer base */
     .footer {
       background: var(--color-bg-warm);
@@ -694,6 +988,154 @@
       width: 20px;
       height: 20px;
       opacity: 0.7;
+    }
+
+    /* ========================================
+       MODALES
+       ======================================== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-md);
+    }
+    .modal[hidden] {
+      display: none;
+    }
+    .modal__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+    .modal__container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      background: var(--color-bg);
+      border-radius: var(--rd-lg);
+      box-shadow: var(--elev-2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal__close {
+      position: absolute;
+      top: var(--sp-md);
+      right: var(--sp-md);
+      width: 40px;
+      height: 40px;
+      background: var(--color-bg);
+      border: 1px solid rgba(49, 85, 166, 0.2);
+      border-radius: var(--rd-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-text-secondary);
+      transition: all 0.2s ease;
+      z-index: 1;
+    }
+    .modal__close:hover,
+    .modal__close:focus {
+      background: var(--color-secondary);
+      color: var(--color-bg);
+      border-color: var(--color-secondary);
+    }
+    .modal__content {
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+    @media (min-width: 768px) {
+      .modal__content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .modal__image-wrapper {
+      position: relative;
+      min-height: 300px;
+      background: var(--color-primary-light);
+    }
+    .modal__image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .modal__info {
+      padding: var(--sp-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+      justify-content: center;
+    }
+    .modal__category {
+      display: inline-block;
+      padding: var(--sp-xs) var(--sp-sm);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      border-radius: var(--rd-sm);
+      width: fit-content;
+    }
+    .modal__title {
+      margin: 0;
+      font-family: var(--font-primary);
+      font-size: var(--fs-heading);
+      font-weight: var(--fw-bold);
+      line-height: var(--lh-tight);
+      color: var(--color-text);
+    }
+    .modal__description {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text-secondary);
+    }
+    .modal__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-sm);
+      margin-top: var(--sp-sm);
+    }
+    .modal__gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--rd-sm);
+      background: var(--color-primary-light);
+    }
+    @media (max-width: 767px) {
+      .modal__info {
+        padding: var(--sp-lg);
+      }
+      .modal__title {
+        font-size: var(--fs-subheading);
+      }
+    }
+
+    /* Focus trap para modales */
+    .modal:not([hidden]) .modal__container {
+      animation: modalIn 0.2s ease;
+    }
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
   </style>
 </head>
@@ -767,7 +1209,8 @@
           <p class="section__subtitle">Quién soy, qué estudio y cómo entiendo el diseño</p>
         </header>
         <div class="about__content">
-          <!-- Contenido se implementará en siguiente paso -->
+          <p class="about__text">Soy <span class="about__highlight">Ally Villagómez</span>, estudiante de Diseño Gráfico y diseñadora en formación. Me interesa crear propuestas visuales que tengan una intención clara y que puedan generar una reacción en las personas.</p>
+          <p class="about__text">Busco desarrollarme profesionalmente en el área de diseño gráfico y construir una trayectoria enfocada en <span class="about__highlight">identidad visual</span>, <span class="about__highlight">branding</span>, <span class="about__highlight">campañas</span> y <span class="about__highlight">comunicación gráfica</span>. Cada proyecto es una oportunidad para resolver problemas reales mediante el diseño.</p>
         </div>
       </div>
     </section>
@@ -779,7 +1222,61 @@
           <p class="section__subtitle">Proyectos seleccionados: identidad visual, branding y campañas</p>
         </header>
         <div class="portfolio__grid">
-          <!-- Cards se implementarán en siguiente paso -->
+          <!-- Proyecto 1: Pedro (Identidad / Campaña) -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/pedro1.png" alt="Proyecto Pedro - Identidad visual" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Identidad visual & Campaña</span>
+              <h3 class="project-card__title">Pedro</h3>
+              <p class="project-card__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro.</p>
+              <a href="#modal-pedro" class="project-card__link" data-modal="pedro">
+                Ver caso
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: Dravy (Branding / Packaging) -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/campaña dravy.png" alt="Proyecto Dravy - Branding y packaging" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Branding & Packaging</span>
+              <h3 class="project-card__title">Dravy</h3>
+              <p class="project-card__description">Identidad de marca, etiquetas y sistema visual para Dravy.</p>
+              <a href="#modal-dravy" class="project-card__link" data-modal="dravy">
+                Ver caso
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Aerolínea (Campaña / Identidad) -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/aerolinea1.png" alt="Proyecto Aerolínea - Campaña e identidad" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Campaña & Identidad</span>
+              <h3 class="project-card__title">Aerolínea</h3>
+              <p class="project-card__description">Concepto visual y piezas de campaña para identidad de aerolínea.</p>
+              <a href="#modal-aerolinea" class="project-card__link" data-modal="aerolinea">
+                Ver caso
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 4: Santa Clara / Leche (Packaging / Editorial) -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/envases santa clara PNG.png" alt="Proyecto Santa Clara - Packaging y editorial" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Packaging & Editorial</span>
+              <h3 class="project-card__title">Santa Clara</h3>
+              <p class="project-card__description">Diseño de envases y piezas editoriales para línea de leche Santa Clara.</p>
+              <a href="#modal-santaclara" class="project-card__link" data-modal="santaclara">
+                Ver caso
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -791,7 +1288,26 @@
           <p class="section__subtitle">Cómo trabajo: investigación, conceptualización, desarrollo visual y refinamiento</p>
         </header>
         <div class="process__steps">
-          <!-- Pasos se implementarán en siguiente paso -->
+          <article class="process-step">
+            <span class="process-step__number">1</span>
+            <h3 class="process-step__title">Investigación</h3>
+            <p class="process-step__description">Análisis del contexto, competencia, audiencia y objetivos del proyecto.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step__number">2</span>
+            <h3 class="process-step__title">Conceptualización</h3>
+            <p class="process-step__description">Definición de la idea central, narrativa visual y dirección creativa.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step__number">3</span>
+            <h3 class="process-step__title">Desarrollo visual</h3>
+            <p class="process-step__description">Creación del sistema gráfico: identidad, piezas, aplicaciones y variaciones.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step__number">4</span>
+            <h3 class="process-step__title">Refinamiento</h3>
+            <p class="process-step__description">Ajustes finales, pruebas de uso, documentación y entrega al cliente.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -803,7 +1319,31 @@
           <p class="section__subtitle">Áreas de especialización y software que manejo</p>
         </header>
         <div class="skills__content">
-          <!-- Contenido se implementará en siguiente paso -->
+          <div class="skills__group">
+            <h3 class="skills__group-title">Áreas de especialización</h3>
+            <div class="skills__tags">
+              <span class="skill-tag">Branding e identidad visual</span>
+              <span class="skill-tag">Conceptualización</span>
+              <span class="skill-tag">Dirección de arte</span>
+              <span class="skill-tag">Composición</span>
+              <span class="skill-tag">Diseño editorial</span>
+              <span class="skill-tag">Campañas</span>
+              <span class="skill-tag">Contenido para redes sociales</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3 class="skills__group-title">Herramientas</h3>
+            <div class="skills__tags">
+              <span class="skill-tag skill-tag--tool">Illustrator</span>
+              <span class="skill-tag skill-tag--tool">After Effects</span>
+              <span class="skill-tag skill-tag--tool">Maya</span>
+              <span class="skill-tag skill-tag--tool">Substance Painter</span>
+              <span class="skill-tag skill-tag--tool">ZBrush</span>
+              <span class="skill-tag skill-tag--tool">Canva</span>
+              <span class="skill-tag skill-tag--tool">CapCut</span>
+              <span class="skill-tag skill-tag--tool">Figma</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -815,7 +1355,10 @@
           <p class="section__subtitle">Estudios en Diseño Gráfico</p>
         </header>
         <div class="education__content">
-          <!-- Contenido se implementará en siguiente paso -->
+          <article class="education__item">
+            <h3 class="education__degree">Diseño Gráfico</h3>
+            <p class="education__detail">Formación actual en Diseño Gráfico. Estudios enfocados en identidad visual, branding, comunicación gráfica y dirección de arte.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -827,11 +1370,124 @@
           <p class="section__subtitle">¿Tienes un proyecto en mente? Escríbeme</p>
         </header>
         <div class="contact__content">
-          <!-- Contenido se implementará en siguiente paso -->
+          <p class="contact__text">Estoy disponible para colaboraciones, proyectos freelance y oportunidades profesionales. Cuéntame tu idea.</p>
+          <div class="contact__actions">
+            <a href="mailto:hola@allyvillagomez.com" class="btn btn--primary contact__btn">Escríbeme</a>
+            <div class="contact__social">
+              <a href="https://github.com/ugaldeallison15-lang" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.305-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/allyvillagomez" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://instagram.com/allyvillagomez" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.979.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.979-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ========================================
+       MODALES PORTAFOLIO
+       ======================================== -->
+  <div class="modal" id="modal-pedro" role="dialog" aria-modal="true" aria-labelledby="modal-pedro-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/pedro1.png" alt="Pedro - Identidad visual" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Identidad visual & Campaña</span>
+          <h2 id="modal-pedro-title" class="modal__title">Pedro</h2>
+          <p class="modal__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro. Incluye logotipo, sistema de color, tipografía y aplicaciones en diversos formatos.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/pedro2.png" alt="Pedro - Aplicación 1" loading="lazy">
+            <img src="assets/img/pedro3.png" alt="Pedro - Aplicación 2" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-dravy" role="dialog" aria-modal="true" aria-labelledby="modal-dravy-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/campaña dravy.png" alt="Dravy - Branding y packaging" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Branding & Packaging</span>
+          <h2 id="modal-dravy-title" class="modal__title">Dravy</h2>
+          <p class="modal__description">Identidad de marca, etiquetas y sistema visual para Dravy. Incluye logotipo, etiquetas de producto, empaques y aplicaciones de marca.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/etiqueta dravy.png" alt="Dravy - Etiqueta" loading="lazy">
+            <img src="assets/img/logo dravy.png" alt="Dravy - Logotipo" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-aerolinea" role="dialog" aria-modal="true" aria-labelledby="modal-aerolinea-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/aerolinea1.png" alt="Aerolínea - Campaña e identidad" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Campaña & Identidad</span>
+          <h2 id="modal-aerolinea-title" class="modal__title">Aerolínea</h2>
+          <p class="modal__description">Concepto visual y piezas de campaña para identidad de aerolínea. Incluye identidad visual, aplicaciones en medios digitales y físicos.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/aerolinea2.png" alt="Aerolínea - Pieza 2" loading="lazy">
+            <img src="assets/img/aerolinea3.png" alt="Aerolínea - Pieza 3" loading="lazy">
+            <img src="assets/img/aerolinea4.png" alt="Aerolínea - Pieza 4" loading="lazy">
+            <img src="assets/img/aerolinea5.png" alt="Aerolínea - Pieza 5" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-santaclara" role="dialog" aria-modal="true" aria-labelledby="modal-santaclara-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/envases santa clara PNG.png" alt="Santa Clara - Packaging y editorial" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Packaging & Editorial</span>
+          <h2 id="modal-santaclara-title" class="modal__title">Santa Clara</h2>
+          <p class="modal__description">Diseño de envases y piezas editoriales para línea de leche Santa Clara. Incluye diseño de packaging, etiquetas y aplicaciones editoriales.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/leche3.png" alt="Santa Clara - Envase 1" loading="lazy">
+            <img src="assets/img/leche4.png" alt="Santa Clara - Envase 2" loading="lazy">
+            <img src="assets/img/leche5.png" alt="Santa Clara - Envase 3" loading="lazy">
+            <img src="assets/img/leche 6.png" alt="Santa Clara - Envase 4" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================
        FOOTER
@@ -909,6 +1565,85 @@
           }
         });
       });
+
+      // ========================================
+      // MODALES PORTAFOLIO
+      // ========================================
+      const modals = document.querySelectorAll('.modal');
+      let lastFocusedElement = null;
+
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
+        lastFocusedElement = document.activeElement;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('.modal__close');
+        if (closeBtn) closeBtn.focus();
+        trapFocus(modal);
+      }
+
+      function closeModal(modal) {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      function trapFocus(modal) {
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        modal.addEventListener('keydown', function handleTab(e) {
+          if (e.key !== 'Tab') return;
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        });
+      }
+
+      // Abrir modales desde tarjetas de portafolio
+      document.querySelectorAll('.project-card__link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const modalId = this.getAttribute('data-modal');
+          if (modalId) openModal('modal-' + modalId);
+        });
+      });
+
+      // Cerrar modales
+      modals.forEach(function(modal) {
+        const closeBtn = modal.querySelector('.modal__close');
+        const overlay = modal.querySelector('.modal__overlay');
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function() {
+            closeModal(modal);
+          });
+        }
+
+        if (overlay) {
+          overlay.addEventListener('click', function() {
+            closeModal(modal);
+          });
+        }
+
+        // Cerrar con Escape
+        modal.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeModal(modal);
+        });
+      });
+
     })();
   </script>
 </body>
