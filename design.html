@@ -1619,56 +1619,68 @@
                 <h3>Retícula y composición</h3>
                 <p class="section-intro">El sistema de retícula se adapta progresivamente a cada breakpoint:</p>
 
-                <div class="grid-breakpoints">
-                    <div class="breakpoint-card">
-                        <div class="breakpoint-header">
-                            <h4>Desktop</h4>
-                            <span class="breakpoint-size">≥ 1024px</span>
+                <div class="grid-breakpoints-compact">
+                    <div class="bp-row">
+                        <div class="bp-cell">
+                            <div class="bp-header">
+                                <h4>Desktop</h4>
+                                <span class="bp-size">≥ 1024px</span>
+                            </div>
+                            <div class="bp-grid desktop" role="img" aria-label="Retícula 12 columnas desktop">
+                                <div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div>
+                                <div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div>
+                                <div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div>
+                            </div>
+                            <p class="bp-desc"><strong>12 columnas</strong> — Control compositivo máximo</p>
                         </div>
-                        <div class="grid-demo desktop-grid" role="img" aria-label="Retícula de 12 columnas para desktop">
-                            <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-                            <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-                            <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-                        </div>
-                        <p class="breakpoint-desc"><strong>12 columnas</strong> — Retícula completa para máximo control compositivo</p>
                     </div>
-                    <div class="breakpoint-card">
-                        <div class="breakpoint-header">
+                    <div class="bp-cell">
+                        <div class="bp-header">
                             <h4>Tablet</h4>
-                            <span class="breakpoint-size">768px – 1023px</span>
+                            <span class="bp-size">768–1023px</span>
                         </div>
-                        <div class="grid-demo tablet-grid" role="img" aria-label="Retícula de 8 columnas para tablet">
-                            <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-                            <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+                        <div class="bp-grid tablet" role="img" aria-label="Retícula 8 columnas tablet">
+                            <div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div>
+                            <div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div><div class="bp-col"></div>
                         </div>
-                        <p class="breakpoint-desc"><strong>8 columnas</strong> — Reducción progresiva, mantiene estructura</p>
+                        <p class="bp-desc"><strong>8 columnas</strong> — Reducción progresiva</p>
                     </div>
-                    <div class="breakpoint-card">
-                        <div class="breakpoint-header">
+                    <div class="bp-cell">
+                        <div class="bp-header">
                             <h4>Móvil</h4>
-                            <span class="breakpoint-size">≤ 767px</span>
+                            <span class="bp-size">≤ 767px</span>
                         </div>
-                        <div class="grid-demo mobile-grid" role="img" aria-label="Retícula de 1 columna para móvil">
-                            <div class="grid-col"></div>
+                        <div class="bp-grid mobile" role="img" aria-label="Retícula 1 columna móvil">
+                            <div class="bp-col"></div>
                         </div>
-                        <p class="breakpoint-desc"><strong>1 columna</strong> — Priorizando lectura y navegación</p>
+                        <p class="bp-desc"><strong>1 columna</strong> — Lectura prioritaria</p>
                     </div>
                 </div>
 
-                <div class="grid-composition-demo">
-                    <h4>Ejemplo de composición responsive</h4>
-                    <div class="composition-grid">
-                        <div class="comp-item header-span">Header (12 col)</div>
-                        <div class="comp-item main-span">Main (8 col)</div>
-                        <div class="comp-item sidebar-span">Sidebar (4 col)</div>
-                        <div class="comp-item card-span">Card (4 col)</div>
-                        <div class="comp-item card-span">Card (4 col)</div>
-                        <div class="comp-item card-span">Card (4 col)</div>
-                        <div class="comp-item footer-span">Footer (12 col)</div>
+                <div class="grid-composition-compact">
+                    <h4>Composición responsive</h4>
+                    <div class="comp-grid-demo">
+                        <div class="comp-row">
+                            <div class="comp-cell header" style="grid-column: span 12;">Header (12)</div>
+                        </div>
+                        <div class="comp-row">
+                            <div class="comp-cell main" style="grid-column: span 8;">Main (8)</div>
+                            <div class="comp-cell sidebar" style="grid-column: span 4;">Sidebar (4)</div>
+                        </div>
+                        <div class="comp-row">
+                            <div class="comp-cell card" style="grid-column: span 4;">Card (4)</div>
+                            <div class="comp-cell card" style="grid-column: span 4;">Card (4)</div>
+                            <div class="comp-cell card" style="grid-column: span 4;">Card (4)</div>
+                        </div>
+                        <div class="comp-row">
+                            <div class="comp-cell footer" style="grid-column: span 12;">Footer (12)</div>
+                        </div>
                     </div>
-                    <p class="composition-note">En tablet: Main (6 col) + Sidebar (2 col) · Cards apiladas 2+1 · En móvil: todo apilado en 1 columna</p>
+                    <div class="comp-responsive-notes">
+                        <span><strong>Tablet:</strong> Main 6 + Sidebar 2 · Cards 2+1</span>
+                        <span><strong>Móvil:</strong> Todo apilado 1 columna</span>
+                    </div>
                 </div>
-            </div>
 
             <div class="layout-section">
                 <h3>Espacio en blanco</h3>
@@ -2068,8 +2080,148 @@
                         grid-column: span 1 !important;
                     }
                 }
-            </style>
-        </section>
+
+                /* Compact grid breakpoints */
+                .grid-breakpoints-compact {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                    margin-top: 16px;
+                }
+                @media (max-width: 1024px) {
+                    .grid-breakpoints-compact { grid-template-columns: 1fr; gap: 16px; }
+                }
+                .bp-cell {
+                    background: #FFFFFF;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 12px;
+                    padding: 20px;
+                    transition: transform 0.15s ease, box-shadow 0.15s ease;
+                }
+                .bp-cell:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 16px rgba(0, 0, 255, 0.08);
+                }
+                .bp-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 12px;
+                }
+                .bp-header h4 {
+                    margin: 0;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #0000FF;
+                }
+                .bp-size {
+                    font-family: monospace;
+                    font-size: 11px;
+                    color: #4A4A4A;
+                    background: #FAF8F6;
+                    padding: 3px 8px;
+                    border-radius: 4px;
+                }
+                .bp-grid {
+                    display: grid;
+                    gap: 4px;
+                    margin-bottom: 10px;
+                    padding: 12px;
+                    background: #FAF8F6;
+                    border-radius: 8px;
+                    border: 1px solid #E0E0E0;
+                }
+                .bp-grid.desktop { grid-template-columns: repeat(12, 1fr); }
+                .bp-grid.tablet { grid-template-columns: repeat(8, 1fr); }
+                .bp-grid.mobile { grid-template-columns: 1fr; }
+                .bp-col {
+                    aspect-ratio: 1;
+                    min-height: 16px;
+                    background: linear-gradient(135deg, #0000FF, #4D4DFF);
+                    border-radius: 3px;
+                    opacity: 0.6;
+                }
+                .bp-desc {
+                    margin: 0;
+                    font-size: 12px;
+                    color: #4A4A4A;
+                    line-height: 1.5;
+                }
+                .bp-desc strong { color: #0000FF; }
+
+                /* Composition compact */
+                .grid-composition-compact {
+                    margin-top: 24px;
+                    padding: 20px;
+                    background: #FAF8F6;
+                    border-radius: 12px;
+                    border: 1px solid #E0E0E0;
+                }
+                .grid-composition-compact h4 {
+                    margin: 0 0 16px;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #0000FF;
+                }
+                .comp-grid-demo {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
+                    gap: 6px;
+                    margin-bottom: 12px;
+                }
+                .comp-row { display: contents; }
+                .comp-cell {
+                    padding: 10px 8px;
+                    background: #FFFFFF;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 6px;
+                    font-size: 11px;
+                    color: #0000FF;
+                    font-weight: 500;
+                    text-align: center;
+                    min-height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .comp-cell.header,
+                .comp-cell.footer {
+                    background: #0000FF;
+                    color: #FFFFFF;
+                    border-color: #0000FF;
+                }
+                .comp-cell.sidebar {
+                    background: #FAF8F6;
+                    border-color: #C02D6E;
+                    color: #C02D6E;
+                }
+                .comp-cell.card {
+                    background: #FAF8F6;
+                    border-color: #E0E0E0;
+                }
+                .comp-responsive-notes {
+                    display: flex;
+                    gap: 24px;
+                    margin-top: 12px;
+                    padding-top: 12px;
+                    border-top: 1px solid #E0E0E0;
+                    font-size: 12px;
+                    color: #4A4A4A;
+                }
+                .comp-responsive-notes span { font-weight: 500; color: #3155A6; }
+                .comp-responsive-notes strong { color: #0000FF; }
+
+                @media (max-width: 1024px) {
+                    .grid-breakpoints-compact { grid-template-columns: 1fr; gap: 16px; }
+                    .comp-grid-demo { grid-template-columns: 1fr; }
+                    .comp-row { display: flex; flex-direction: column; gap: 6px; }
+                }
+                @media (max-width: 768px) {
+                    .grid-breakpoints-compact { grid-template-columns: 1fr; gap: 12px; }
+                    .comp-grid-demo { grid-template-columns: repeat(6, 1fr); }
+                }
 
         <section id="elevation-depth" style="background: linear-gradient(180deg, #FDFBF7 0%, #FFFFFF 100%);">
             <h2>Elevation & Depth</h2>
