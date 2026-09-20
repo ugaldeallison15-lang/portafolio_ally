@@ -505,7 +505,7 @@
       margin-top: var(--sp-xl);
     }
     .hero__logo-img {
-      animation: logoEntrance 1s ease-out forwards, logoStarGlow 1s ease-out 0.2s forwards;
+      animation: logoEntrance 1s ease-out forwards;
     }
 
     .hero__tagline--animate {
@@ -574,9 +574,33 @@
         justify-content: flex-start;
         width: auto;
       }
-      .hero__cta {
-        width: auto;
+.hero__cta {
+      width: 100%;
+    }
+
+    .hero__logo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero__logo-star {
+      position: absolute;
+      transform-origin: center;
+    }
+
+    .hero__logo-star {
+      animation: logoStarReveal 1s ease-out forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__logo-img,
+      .hero__tagline--animate,
+      .hero__logo-star {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
       }
+    }
 
       .hero__stars {
         position: absolute;
@@ -1186,6 +1210,28 @@
     .modal:not([hidden]) .modal__container {
       animation: modalIn 0.2s ease;
     }
+    @keyframes logoStarReveal {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(0deg);
+        filter: drop-shadow(0 0 0 transparent);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1.05) rotate(180deg);
+        filter: drop-shadow(0 0 20px rgba(255, 102, 204, 0.6));
+      }
+      70% {
+        transform: scale(1.02) rotate(320deg);
+        filter: drop-shadow(0 0 12px rgba(255, 102, 204, 0.4));
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+        filter: drop-shadow(0 0 0 transparent);
+      }
+    }
+
     @keyframes modalIn {
       from {
         opacity: 0;
@@ -1296,7 +1342,13 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
+  <div class="hero__logo-container" style="position: relative; display: inline-block;">
+    <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
+    <svg class="hero__logo-star" viewBox="0 0 24 24" fill="#FF66CC" style="position: absolute; width: 48px; height: 48px; top: 18%; left: 58%; transform-origin: center; opacity: 0; animation: logoStarReveal 1s ease-out forwards; filter: drop-shadow(0 0 0 transparent);">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>
+    <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
+  </div>
 </h1>
           <p class="hero__tagline hero__tagline--animate" id="hero-tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
@@ -1331,7 +1383,7 @@
         <div class="portfolio__grid">
           <!-- Proyecto 1: Pedro (Identidad / Campaña) -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/pedrologo.png" alt="Proyecto Pedro Friedberg - Identidad visual" loading="lazy">
+            <img class="project-card__image" src="assets/img/pedro3.png" alt="Proyecto Pedro Friedberg - Identidad visual" loading="lazy">
             <div class="project-card__content">
               <span class="project-card__category">Identidad visual & Campaña</span>
               <h3 class="project-card__title">Pedro Friedberg</h3>
@@ -1359,7 +1411,7 @@
 
           <!-- Proyecto 3: Aerolínea (Campaña / Identidad) -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/aerolinea1.png" alt="Proyecto Aerolínea - Campaña e identidad" loading="lazy">
+            <img class="project-card__image" src="assets/img/aerolinea4.png" alt="Proyecto Aerolínea - Campaña e identidad" loading="lazy">
             <div class="project-card__content">
               <span class="project-card__category">Campaña & Identidad</span>
               <h3 class="project-card__title">Aerolínea</h3>
@@ -1508,7 +1560,7 @@
       </button>
       <div class="modal__content">
         <div class="modal__image-wrapper">
-          <img src="assets/img/pedrologo.png" alt="Pedro Friedberg - Identidad visual" loading="lazy">
+          <img src="assets/img/pedro3.png" alt="Pedro Friedberg - Identidad visual" loading="lazy">
         </div>
         <div class="modal__info">
           <span class="modal__category">Identidad visual & Campaña</span>
@@ -1554,7 +1606,7 @@
       </button>
       <div class="modal__content">
         <div class="modal__image-wrapper">
-          <img src="assets/img/aerolinea1.png" alt="Aerolínea - Campaña e identidad" loading="lazy">
+          <img src="assets/img/aerolinea4.png" alt="Aerolínea - Campaña e identidad" loading="lazy">
         </div>
         <div class="modal__info">
           <span class="modal__category">Campaña & Identidad</span>
