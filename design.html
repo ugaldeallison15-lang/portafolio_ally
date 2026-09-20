@@ -228,9 +228,8 @@
             max-width: 720px;
         }
 
-        /* Card-like appearance for existing blocks */
+        /* Card-like appearance for existing blocks - containers only, not visual children */
         .color-card,
-        .color-card *,
         .font-family-card,
         .component-section,
         .button-variant,
@@ -271,32 +270,7 @@
             transform: translateY(-2px);
         }
 
-        /* Ensure color-swatch and similar visual elements don't get card styling */
-        .color-swatch,
-        .font-sample,
-        .spacing-bar,
-        .ruler-bar,
-        .grid-col,
-        .demo-box,
-        .shape-circle,
-        .shape-rect,
-        .shape-organic,
-        .radius-visual,
-        .elevation-demo,
-        .card-image,
-        .card-image-small,
-        .social-icon,
-        .btn,
-        .link,
-        .star,
-        .spaced-item,
-        .content-block {
-            box-shadow: none !important;
-            transform: none !important;
-            border: none !important;
-            background: inherit !important;
-            border-radius: 0 !important;
-        }
+        
 
         /* Grid clarity for existing grid-based demos */
         .color-grid,
