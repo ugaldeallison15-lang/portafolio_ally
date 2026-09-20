@@ -452,6 +452,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(2deg);
+      }
     }
 
     .hero__stars {
@@ -1233,7 +1243,7 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain;">
+  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain; animation: float 6s ease-in-out infinite;">
 </h1>
           <p class="hero__tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
