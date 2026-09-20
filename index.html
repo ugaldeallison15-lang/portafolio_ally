@@ -452,16 +452,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-12px) rotate(2deg);
-      }
     }
 
     .hero__stars {
@@ -766,16 +756,20 @@
       align-items: center;
       gap: var(--sp-xs);
       margin-top: var(--sp-xs);
+      padding: var(--sp-xs) var(--sp-sm);
       font-family: var(--font-secondary);
       font-size: var(--fs-small);
       font-weight: var(--fw-medium);
-      color: var(--color-primary);
+      color: var(--color-bg);
+      background: var(--color-secondary);
+      border-radius: var(--rd-sm);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.2s ease;
     }
     .project-card__link:hover,
     .project-card__link:focus {
-      color: var(--color-secondary);
+      background: var(--color-secondary-hover);
+      color: var(--color-bg);
     }
     .project-card__link svg {
       width: 16px;
@@ -1243,7 +1237,7 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain; animation: float 6s ease-in-out infinite;">
+  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain;">
 </h1>
           <p class="hero__tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
@@ -1284,7 +1278,7 @@
               <h3 class="project-card__title">Pedro</h3>
               <p class="project-card__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro.</p>
               <a href="#modal-pedro" class="project-card__link" data-modal="pedro">
-                Ver caso
+                Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
@@ -1298,7 +1292,7 @@
               <h3 class="project-card__title">Dravy</h3>
               <p class="project-card__description">Identidad de marca, etiquetas y sistema visual para Dravy.</p>
               <a href="#modal-dravy" class="project-card__link" data-modal="dravy">
-                Ver caso
+                Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
@@ -1312,7 +1306,7 @@
               <h3 class="project-card__title">Aerolínea</h3>
               <p class="project-card__description">Concepto visual y piezas de campaña para identidad de aerolínea.</p>
               <a href="#modal-aerolinea" class="project-card__link" data-modal="aerolinea">
-                Ver caso
+                Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
@@ -1326,7 +1320,7 @@
               <h3 class="project-card__title">Santa Clara</h3>
               <p class="project-card__description">Diseño de envases y piezas editoriales para línea de leche Santa Clara.</p>
               <a href="#modal-santaclara" class="project-card__link" data-modal="santaclara">
-                Ver caso
+                Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
