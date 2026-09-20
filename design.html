@@ -176,6 +176,29 @@
             .ds-nav__link { padding: 12px 14px; font-size: 13px; }
         }
 
+        /* Logo in nav */
+        .ds-nav__logo {
+            display: flex;
+            align-items: center;
+            margin-right: 24px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.18s ease;
+        }
+        .ds-nav__logo:hover {
+            background: #F3A6C4;
+        }
+        .ds-nav__logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        @media (max-width: 640px) {
+            .ds-nav__logo { margin-right: 12px; padding: 4px; }
+            .ds-nav__logo img { width: 28px; height: 28px; }
+        }
+
         /* ========================================
            LAYOUT & VISUAL REFINEMENTS
            ======================================== */
@@ -655,6 +678,9 @@
     <header class="ds-header" role="banner">
         <nav class="ds-nav" id="ds-nav" aria-label="Navegación del Design System">
             <div class="ds-nav__inner">
+                <a href="#overview" class="ds-nav__logo" aria-label="Ally Villagómez - Inicio">
+                    <img src="assets/img/Logo ally.jpg" alt="" width="40" height="40" style="border-radius: 8px;">
+                </a>
                 <ul class="ds-nav__list">
                     <li><a class="ds-nav__link" href="#overview">Overview</a></li>
                     <li><a class="ds-nav__link" href="#colors">Colors</a></li>
