@@ -578,24 +578,9 @@
       width: 100%;
     }
 
-    .hero__logo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .hero__logo-star {
-      position: absolute;
-      transform-origin: center;
-    }
-
-    .hero__logo-star {
-      animation: logoStarReveal 1s ease-out forwards;
-    }
-
     @media (prefers-reduced-motion: reduce) {
       .hero__logo-img,
-      .hero__tagline--animate,
-      .hero__logo-star {
+      .hero__tagline--animate {
         animation: none !important;
         opacity: 1;
         transform: none;
@@ -1210,28 +1195,6 @@
     .modal:not([hidden]) .modal__container {
       animation: modalIn 0.2s ease;
     }
-    @keyframes logoStarReveal {
-      0% {
-        opacity: 0;
-        transform: scale(0.8) rotate(0deg);
-        filter: drop-shadow(0 0 0 transparent);
-      }
-      40% {
-        opacity: 1;
-        transform: scale(1.05) rotate(180deg);
-        filter: drop-shadow(0 0 20px rgba(255, 102, 204, 0.6));
-      }
-      70% {
-        transform: scale(1.02) rotate(320deg);
-        filter: drop-shadow(0 0 12px rgba(255, 102, 204, 0.4));
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) rotate(360deg);
-        filter: drop-shadow(0 0 0 transparent);
-      }
-    }
-
     @keyframes modalIn {
       from {
         opacity: 0;
@@ -1255,25 +1218,6 @@
       100% {
         opacity: 1;
         transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes logoStarGlow {
-      0% {
-        transform: rotate(0deg) scale(0.8);
-        filter: drop-shadow(0 0 0 transparent);
-      }
-      40% {
-        transform: rotate(180deg) scale(1.05);
-        filter: drop-shadow(0 0 20px rgba(255, 102, 204, 0.6));
-      }
-      70% {
-        transform: rotate(320deg) scale(1.02);
-        filter: drop-shadow(0 0 12px rgba(255, 102, 204, 0.4));
-      }
-      100% {
-        transform: rotate(360deg) scale(1);
-        filter: drop-shadow(0 0 0 transparent);
       }
     }
 
@@ -1342,13 +1286,7 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <div class="hero__logo-container" style="position: relative; display: inline-block;">
-    <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
-    <svg class="hero__logo-star" viewBox="0 0 24 24" fill="#FF66CC" style="position: absolute; width: 48px; height: 48px; top: 18%; left: 58%; transform-origin: center; opacity: 0; animation: logoStarReveal 1s ease-out forwards; filter: drop-shadow(0 0 0 transparent);">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-    </svg>
-    <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
-  </div>
+  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
 </h1>
           <p class="hero__tagline hero__tagline--animate" id="hero-tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
@@ -1431,6 +1369,34 @@
               <h3 class="project-card__title">Santa Clara</h3>
               <p class="project-card__description">Diseño de envases y piezas editoriales para línea de leche Santa Clara.</p>
               <a href="#modal-santaclara" class="project-card__link" data-modal="santaclara">
+                Ver proyecto
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 5: Campaña SIMI -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/campaña simi.png" alt="Proyecto Campaña SIMI" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Campaña</span>
+              <h3 class="project-card__title">Campaña SIMI</h3>
+              <p class="project-card__description">Concepto y piezas gráficas para campaña SIMI Fest.</p>
+              <a href="#modal-simi" class="project-card__link" data-modal="simi">
+                Ver proyecto
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 6: Fotografía de producto -->
+          <article class="project-card">
+            <img class="project-card__image" src="assets/img/foto1.png" alt="Fotografía de producto - Foto 1" loading="lazy">
+            <div class="project-card__content">
+              <span class="project-card__category">Fotografía de producto</span>
+              <h3 class="project-card__title">Fotografía de producto</h3>
+              <p class="project-card__description">Sesiones de fotografía para productos: composición, iluminación y retoque.</p>
+              <a href="#modal-fotografia" class="project-card__link" data-modal="fotografia">
                 Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
@@ -1642,6 +1608,52 @@
             <img src="assets/img/leche4.png" alt="Santa Clara - Envase 2" loading="lazy">
             <img src="assets/img/leche5.png" alt="Santa Clara - Envase 3" loading="lazy">
             <img src="assets/img/leche 6.png" alt="Santa Clara - Envase 4" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-simi" role="dialog" aria-modal="true" aria-labelledby="modal-simi-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/campaña simi.png" alt="Campaña SIMI Fest" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Campaña</span>
+          <h2 id="modal-simi-title" class="modal__title">Campaña SIMI</h2>
+          <p class="modal__description">Concepto y piezas gráficas para campaña SIMI Fest. Incluye identidad visual del evento, aplicaciones en medios digitales y físicos, señalética y merchandising.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/MEDIO 1 SIMI.pdf" alt="SIMI Fest - Medio 1" loading="lazy">
+            <img src="assets/img/MEDIO 2 SIMI FEST.pdf" alt="SIMI Fest - Medio 2" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-fotografia" role="dialog" aria-modal="true" aria-labelledby="modal-fotografia-title" hidden>
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__container">
+      <button class="modal__close" aria-label="Cerrar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrapper">
+          <img src="assets/img/foto1.png" alt="Fotografía de producto - Foto 1" loading="lazy">
+        </div>
+        <div class="modal__info">
+          <span class="modal__category">Fotografía de producto</span>
+          <h2 id="modal-fotografia-title" class="modal__title">Fotografía de producto</h2>
+          <p class="modal__description">Sesiones de fotografía para productos: composición, iluminación y retoque. Enfoque en resaltar texturas, materiales y detalles de cada pieza.</p>
+          <div class="modal__gallery">
+            <img src="assets/img/foto1.png" alt="Fotografía de producto - Foto 1" loading="lazy">
+            <img src="assets/img/foto2.png" alt="Fotografía de producto - Foto 2" loading="lazy">
           </div>
         </div>
       </div>
