@@ -948,6 +948,13 @@
       border-color: var(--color-secondary);
     }
 
+    .skill-tag .tool-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+
     /* ========================================
        EDUCATION
        ======================================== */
@@ -1378,7 +1385,7 @@
 
           <!-- Proyecto 5: Campaña SIMI -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/campañasimi.png" alt="Proyecto Campaña SIMI" loading="lazy" style="object-fit: cover; object-position: center 20%;">
+            <img class="project-card__image" src="assets/img/campañasimi.png" alt="Proyecto Campaña SIMI" loading="lazy" style="object-fit: cover; transform: scale(1.2); object-position: center 10%;">
             <div class="project-card__content">
               <span class="project-card__category">Campaña</span>
               <h3 class="project-card__title">Campaña SIMI</h3>
@@ -1459,15 +1466,39 @@
           </div>
           <div class="skills__group">
             <h3 class="skills__group-title">Herramientas</h3>
-            <div class="skills__tags">
-              <span class="skill-tag skill-tag--tool">Illustrator</span>
-              <span class="skill-tag skill-tag--tool">After Effects</span>
-              <span class="skill-tag skill-tag--tool">Maya</span>
-              <span class="skill-tag skill-tag--tool">Substance Painter</span>
-              <span class="skill-tag skill-tag--tool">ZBrush</span>
-              <span class="skill-tag skill-tag--tool">Canva</span>
-              <span class="skill-tag skill-tag--tool">CapCut</span>
-              <span class="skill-tag skill-tag--tool">Figma</span>
+            <div class="skills__tags skills__tags--tools">
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+                Illustrator
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                After Effects
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                Maya
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                Substance Painter
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                ZBrush
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                Canva
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                CapCut
+              </span>
+              <span class="skill-tag skill-tag--tool">
+                <svg class="tool-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                Figma
+              </span>
             </div>
           </div>
         </div>
