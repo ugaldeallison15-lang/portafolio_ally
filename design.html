@@ -219,6 +219,11 @@
             line-height: 1.2;
             color: #3155A6;
         }
+        /* Accent color for alternating section titles */
+        section:nth-of-type(even) > h2,
+        section:nth-of-type(even) > h3:first-of-type {
+            color: #C02D6E;
+        }
         .section-intro {
             margin: 0 0 32px;
             font-family: "Avenir", "NunitoSans", system-ui, sans-serif;
@@ -539,9 +544,12 @@
     </header>
 
     <main>
-        <section id="overview">
+        <section id="overview" style="background: linear-gradient(180deg, #FAF8F6 0%, #FFFFFF 100%);">
             <h2>Overview</h2>
             <p class="section-intro">Esta documentación presenta el sistema de diseño completo: paleta de colores, tipografía, arquitectura de layout, elevación, formas y componentes reutilizables. Cada sección incluye demostraciones visuales, tokens técnicos y ejemplos de uso para mantener consistencia en todos los proyectos.</p>
+        </section>
+
+        <section id="colors" style="background: linear-gradient(180deg, #F3F1FF 0%, #FFFFFF 100%);"></p>
         </section>
 
         <section id="colors">
@@ -775,7 +783,7 @@
             </style>
 </section>
 
-        <section id="typography">
+        <section id="typography" style="background: linear-gradient(180deg, #F0F4FA 0%, #FFFFFF 100%);">
             <h2>Typography</h2>
             <p class="section-intro">Mi sistema tipográfico equilibra <strong>expresión y claridad</strong>. Combino una tipografía con mayor personalidad para los títulos (<code>Hobeaux Bold</code>) con una sans serif limpia para la información (<code>Avenir</code>), creando una identidad visual creativa, cercana y fácil de reconocer.</p>
 
@@ -1161,7 +1169,7 @@
             </style>
         </section>
 
-        <section id="layout">
+        <section id="layout" style="background: linear-gradient(180deg, #F5F5F0 0%, #FFFFFF 100%);">
             <h2>Layout</h2>
             <p class="section-intro">Mi composición mantiene un <strong>equilibrio entre orden y libertad creativa</strong>. Utilizo el espacio para darle protagonismo a cada proyecto y evitar que los elementos compitan entre sí, sin limitarme a estructuras completamente rígidas.</p>
 
@@ -1701,7 +1709,7 @@
             </style>
         </section>
 
-        <section id="elevation-depth">
+        <section id="elevation-depth" style="background: linear-gradient(180deg, #FDFBF7 0%, #FFFFFF 100%);">
             <h2>Elevation & Depth</h2>
             <p class="section-intro">Mi sistema de profundidad es <strong>sutil y contemporáneo</strong>. La mayor parte de los elementos se mantienen <strong>planos</strong> para que el color, la tipografía y la composición sean protagonistas.</p>
 
@@ -1947,7 +1955,7 @@
             </style>
         </section>
 
-        <section id="shapes">
+        <section id="shapes" style="background: linear-gradient(180deg, #FFF8F0 0%, #FFFFFF 100%);">
             <h2>Shapes</h2>
             <p class="section-intro">Mis formas combinan <strong>estructuras geométricas con bordes suaves</strong> para una estética equilibrada entre lo ordenado y lo creativo.</p>
 
@@ -2137,7 +2145,7 @@
             </style>
         </section>
 
-        <section id="components">
+        <section id="components" style="background: linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 100%);">
             <h2>Components</h2>
 
             <div class="component-section">
