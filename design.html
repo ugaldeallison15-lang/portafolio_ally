@@ -194,9 +194,28 @@
             border-radius: 6px;
             object-fit: cover;
         }
+        .ds-nav__logo--end {
+            display: flex;
+            align-items: center;
+            margin-left: 16px;
+            padding: 4px;
+            border-radius: 6px;
+            transition: background 0.18s ease;
+        }
+        .ds-nav__logo--end:hover {
+            background: #F3A6C4;
+        }
+        .ds-nav__logo--end img {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
         @media (max-width: 640px) {
             .ds-nav__logo { margin-right: 12px; padding: 4px; }
             .ds-nav__logo img { width: 28px; height: 28px; }
+            .ds-nav__logo--end { margin-left: 8px; padding: 2px; }
+            .ds-nav__logo--end img { width: 20px; height: 20px; }
         }
 
         /* ========================================
@@ -690,6 +709,9 @@
                     <li><a class="ds-nav__link" href="#shapes">Shapes</a></li>
                     <li><a class="ds-nav__link" href="#components">Components</a></li>
                     <li><a class="ds-nav__link" href="#dos-and-donts">Do's & Don'ts</a></li>
+                    <li><a class="ds-nav__logo ds-nav__logo--end" href="#overview" aria-label="Ally Villagómez - Inicio">
+                        <img src="assets/img/Logo ally.jpg" alt="" width="28" height="28" style="border-radius: 6px;">
+                    </a></li>
                 </ul>
             </div>
         </nav>
