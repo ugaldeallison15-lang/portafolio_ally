@@ -198,15 +198,15 @@
 
         /* Vertical rhythm between sections */
         section {
-            padding: 64px 0;
-            border-top: 1px solid rgba(49, 85, 166, 0.06);
+            padding: 56px 0;
+            border-top: 1px solid rgba(49, 85, 166, 0.05);
         }
         section:first-of-type {
             border-top: none;
-            padding-top: 32px;
+            padding-top: 24px;
         }
         @media (max-width: 768px) {
-            section { padding: 48px 0; }
+            section { padding: 40px 0; }
         }
 
         /* Section header consistency */
@@ -507,6 +507,148 @@
         @media (max-width: 768px) {
             .section-intro { max-width: 100%; }
         }
+
+        /* ========================================
+           ENHANCED VISUAL REFINEMENTS
+           ======================================== */
+
+        /* Overview cards hover effect */
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(49, 85, 166, 0.12);
+        }
+
+        /* Font family cards enhanced */
+        .font-family-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .font-family-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(49, 85, 166, 0.1);
+        }
+
+        /* Type scale rows - better visual separation */
+        .type-row {
+            transition: background 0.15s ease;
+        }
+        .type-row:hover {
+            background: rgba(192, 45, 110, 0.03);
+        }
+
+        /* Button group - better visual grouping */
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .button-variant {
+            position: relative;
+            overflow: hidden;
+        }
+        .button-variant::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3155A6, #C02D6E);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .button-variant:hover::before {
+            opacity: 1;
+        }
+
+        /* Button states - better alignment */
+        .button-states {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .button-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Do's & Don'ts - enhanced visual design */
+        .dnd-item {
+            transition: background 0.15s ease;
+        }
+        .dnd-item:hover {
+            background: rgba(192, 45, 110, 0.02);
+        }
+        .dnd-visual {
+            transition: transform 0.15s ease;
+        }
+        .dnd-item:hover .dnd-visual {
+            transform: scale(1.02);
+        }
+
+        /* Overview cards - entrance animation */
+        .overview-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .overview-card:nth-child(1) { animation-delay: 0.1s; }
+        .overview-card:nth-child(2) { animation-delay: 0.2s; }
+        .overview-card:nth-child(3) { animation-delay: 0.3s; }
+        .overview-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .overview-card,
+            .font-family-card,
+            .button-variant,
+            .dnd-item,
+            .overview-card {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Better focus styles for interactive elements */
+        .btn:focus-visible,
+        .link:focus-visible,
+        .social-icon:focus-visible,
+        .ds-nav__link:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(192, 45, 110, 0.4);
+            border-radius: 4px;
+        }
+
+        /* Print styles */
+        @media print {
+            .ds-hero__bg,
+            .ds-nav,
+            .overview-highlights,
+            .color-hex-star,
+            .token-ref,
+            .dnd-visual {
+                display: none !important;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            .color-card,
+            .font-family-card,
+            .button-variant,
+            .dnd-column {
+                break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -543,16 +685,44 @@
         </div>
     </header>
 
-    <main>
+<main>
         <section id="overview" style="background: linear-gradient(180deg, #FAF8F6 0%, #FFFFFF 100%);">
             <h2>Overview</h2>
-            <p class="section-intro">Esta documentación presenta el sistema de diseño completo: paleta de colores, tipografía, arquitectura de layout, elevación, formas y componentes reutilizables. Cada sección incluye demostraciones visuales, tokens técnicos y ejemplos de uso para mantener consistencia en todos los proyectos.</p>
+            <p class="section-intro">Esta documentación presenta el sistema de diseño completo: paleta de colores, tipografía, arquitectura de layout, elevación, formas y componentes reutilizables. Cada sección incluye demostraciones visuales, tokens técnicos y ejemplos de uso para mantener consistencia en todos los proyectos.
+        </section>
+        <div class="overview-highlights" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px;">
+            <div class="overview-card" style="background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <div style="width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, #3155A6, #7EA6D8); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3 style="margin: 0 0 8px; font-family: 'Hobeaux Bold', 'BreeSerif', Georgia, serif; font-size: 18px; color: #3155A6;">Colores</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4A4A;">13 tokens de color con roles semánticos definidos</p>
+            </div>
+            <div class="overview-card" style="background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <div style="width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, #C02D6E, #F3A6C4); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 17"/><line x1="9" y1="20" x2="15" y2="4"/></svg>
+                </div>
+                <h3 style="margin: 0 0 8px; font-family: 'Hobeaux Bold', 'BreeSerif', Georgia, serif; font-size: 18px; color: #3155A6;">Tipografía</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4A4A;">2 familias (Hobeaux Bold + Avenir), 12 tokens de escala</p>
+            </div>
+            <div class="overview-card" style="background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <div style="width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, #3155A6, #7EA6D8); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                </div>
+                <h3 style="margin: 0 0 8px; font-family: 'Hobeaux Bold', 'BreeSerif', Georgia, serif; font-size: 18px; color: #3155A6;">Layout</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4A4A;">Grid 12/8/1 cols, spacing base 8px, whitespace principles</p>
+            </div>
+            <div class="overview-card" style="background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <div style="width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, #C02D6E, #F3A6C4); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+                </div>
+                <h3 style="margin: 0 0 8px; font-family: 'Hobeaux Bold', 'BreeSerif', Georgia, serif; font-size: 18px; color: #3155A6;">Componentes</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4A4A;">6 componentes: Button, Card, Input, Link, Social Icon, Star</p>
+            </div>
+        </div>
         </section>
 
-        <section id="colors" style="background: linear-gradient(180deg, #F3F1FF 0%, #FFFFFF 100%);"></p>
-        </section>
-
-        <section id="colors">
+        <section id="colors" style="background: linear-gradient(180deg, #F3F1FF 0%, #FFFFFF 100%);">
             <h2>Colors</h2>
             <p class="section-intro">Mi paleta busca reflejar una personalidad <strong>creativa, segura, alegre y cercana</strong>. Cada color tiene un rol definido:</p>
             <div class="color-grid">
@@ -790,23 +960,25 @@
             <div class="typography-section">
                 <h3>Familias tipográficas</h3>
                 <div class="font-family-grid">
-                    <div class="font-family-card">
-                        <div class="font-sample primary-font">Hobeaux Bold</div>
-                        <div class="font-info">
+                    <div class="font-family-card" style="position: relative; overflow: hidden;">
+                        <div class="font-sample primary-font" style="position: relative; z-index: 1;">Hobeaux Bold</div>
+                        <div class="font-info" style="position: relative; z-index: 1;">
                             <h4>typography.fontFamilyPrimary</h4>
                             <code>"Hobeaux Bold"</code>
                             <p><strong>Fallback:</strong> BreeSerif (disponible en assets/fonts/)</p>
                             <p class="font-usage">Títulos, nombres de proyectos, frases destacadas, elementos con presencia visual</p>
                         </div>
+                        <div style="position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, rgba(49,85,166,0.08), rgba(126,166,216,0.08)); pointer-events: none;"></div>
                     </div>
-                    <div class="font-family-card">
+                    <div class="font-family-card" style="position: relative; overflow: hidden;">
                         <div class="font-sample secondary-font">Avenir</div>
-                        <div class="font-info">
+                        <div class="font-info" style="position: relative; z-index: 1;">
                             <h4>typography.fontFamilySecondary</h4>
                             <code>"Avenir"</code>
                             <p><strong>Fallback:</strong> NunitoSans (disponible en assets/fonts/)</p>
                             <p class="font-usage">Subtítulos, textos, navegación, botones, enlaces, contenido general</p>
                         </div>
+                        <div style="position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, rgba(192,45,110,0.08), rgba(243,166,196,0.08)); pointer-events: none;"></div>
                     </div>
                 </div>
             </div>
