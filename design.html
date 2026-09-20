@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design System</title>
     <style>
-/* ========================================
-       GLOBAL / LAYOUT FOUNDATION
-       ======================================== */
+        /* ========================================
+           GLOBAL RESET & BASE
+           ======================================== */
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -27,107 +27,6 @@
             outline: none;
             box-shadow: 0 0 0 3px rgba(192, 45, 110, 0.4);
             border-radius: 4px;
-        }
-
-        /* ========================================
-           CONTAINER & GRID SYSTEM
-           ======================================== */
-        .ds-container {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        @media (max-width: 1024px) {
-            .ds-container { max-width: 100%; padding: 0 28px; }
-        }
-        @media (max-width: 768px) {
-            .ds-container { padding: 0 24px; }
-        }
-        @media (max-width: 480px) {
-            .ds-container { padding: 0 20px; }
-        }
-
-        /* 12-column grid for desktop, 8 for tablet, 1 for mobile */
-        .ds-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        @media (max-width: 1024px) {
-            .ds-grid { grid-template-columns: repeat(8, 1fr); gap: 20px; }
-        }
-        @media (max-width: 768px) {
-            .ds-grid { grid-template-columns: 1fr; gap: 16px; }
-        }
-
-        /* Section base spacing */
-        section {
-            padding: 64px 0;
-            border-top: 1px solid rgba(49, 85, 166, 0.06);
-        }
-        section:first-of-type { border-top: none; padding-top: 32px; }
-        @media (max-width: 768px) {
-            section { padding: 48px 0; }
-        }
-
-        /* Section header consistency */
-        .section-header {
-            grid-column: 1 / -1;
-            margin-bottom: 16px;
-        }
-        .section-header h2 {
-            margin: 0 0 8px;
-            font-family: "Hobeaux Bold", "BreeSerif", Georgia, serif;
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 700;
-            line-height: 1.2;
-            color: #3155A6;
-        }
-        .section-header .section-intro {
-            margin: 0;
-            font-family: "Avenir", "NunitoSans", system-ui, sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #4A4A4A;
-        }
-
-        /* Demo visual primary, tech specs secondary */
-        .ds-demo {
-            grid-column: 1 / -1;
-        }
-        @media (min-width: 1025px) {
-            .ds-demo { grid-column: 1 / span 8; }
-        }
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .ds-demo { grid-column: 1 / span 6; }
-        }
-
-        .ds-specs {
-            grid-column: 1 / -1;
-        }
-        @media (min-width: 1025px) {
-            .ds-specs { grid-column: 9 / -1; }
-        }
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .ds-specs { grid-column: 7 / -1; }
-        }
-
-        /* Focus visible */
-        :focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(192, 45, 110, 0.4);
-            border-radius: 4px;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Avenir", "NunitoSans", system-ui, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #3155A6;
-            background: #FFFFFF;
-            -webkit-font-smoothing: antialiased;
         }
 
         /* ========================================
@@ -224,9 +123,18 @@
             border-bottom: 1px solid rgba(49, 85, 166, 0.1);
         }
         .ds-nav__inner {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
+        }
+        @media (max-width: 1024px) {
+            .ds-nav__inner { padding: 0 28px; }
+        }
+        @media (max-width: 768px) {
+            .ds-nav__inner { padding: 0 24px; }
+        }
+        @media (max-width: 480px) {
+            .ds-nav__inner { padding: 0 20px; }
         }
         .ds-nav__list {
             display: flex;
@@ -267,6 +175,8 @@
             .ds-hero { padding: 60px 20px 48px; }
             .ds-nav__link { padding: 12px 14px; font-size: 13px; }
         }
+    </style>
+</head>
 <body>
     <header class="ds-header" role="banner">
         <div class="ds-hero">
@@ -302,20 +212,12 @@
     </header>
 
     <main>
-        <div class="ds-container">
-            <div class="ds-grid">
-                <section id="overview">
-                    <header class="section-header">
-                        <h2>Overview</h2>
-                        <p class="section-intro">Este sistema reúne las reglas visuales que definen mi identidad como diseñadora: color, tipografía, espacio, forma y componentes. Una base creativa, alegre, cercana y profesional —sin rigidez— para que cada proyecto tenga libertad sin perder unidad.</p>
-                    </header>
-                </section>
+        <section id="overview">
+            <h2>Overview</h2>
+        </section>
 
-                <section id="colors">
-                    <header class="section-header">
-                        <h2>Colors</h2>
-                        <p class="section-intro">Mi paleta busca reflejar una personalidad <strong>creativa, segura, alegre y cercana</strong>. Cada color tiene un rol definido:</p>
-                    </header>
+        <section id="colors">
+            <h2>Colors</h2>
             <p class="section-intro">Mi paleta busca reflejar una personalidad <strong>creativa, segura, alegre y cercana</strong>. Cada color tiene un rol definido:</p>
             <div class="color-grid">
                 <div class="color-card">
@@ -427,435 +329,456 @@
                     </div>
                 </div>
             </div>
+            <style>
+                .section-intro {
+                    margin-bottom: 24px;
+                    color: #4A4A4A;
+                    line-height: 1.6;
+                }
+                .color-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                    gap: 24px;
+                    margin-top: 24px;
+                }
+                .color-card {
+                    background: #FFFFFF;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    transition: box-shadow 0.2s ease;
+                }
+                .color-card:hover {
+                    box-shadow: 0 4px 12px rgba(49, 85, 166, 0.1);
+                }
+                .color-swatch {
+                    height: 80px;
+                    width: 100%;
+                }
+                .color-info {
+                    padding: 16px 20px;
+                }
+                .color-info h3 {
+                    margin: 0 0 8px;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #3155A6;
+                }
+                .color-hex {
+                    display: inline-block;
+                    background: #FAF8F6;
+                    padding: 4px 10px;
+                    border-radius: 6px;
+                    font-family: monospace;
+                    font-size: 13px;
+                    color: #4A4A4A;
+                    margin-bottom: 10px;
+                }
+                .color-role {
+                    margin: 0 0 6px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #3155A6;
+                }
+                .color-usage {
+                    margin: 0;
+                    font-size: 13px;
+                    color: #4A4A4A;
+                    line-height: 1.5;
+                }
+            </style>
+        </section>
 
-            <div class="ds-demo">
-                <div class="color-grid">
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #3155A6;"></div>
-                        <div class="color-info">
-                            <h3>colors.primary</h3>
-                            <code class="color-hex">#3155A6</code>
-                            <p class="color-role">Confianza y seguridad</p>
-                            <p class="color-usage">Títulos, elementos principales, piezas que requieren profesionalismo</p>
+        <section id="typography">
+            <h2>Typography</h2>
+            <p class="section-intro">Mi sistema tipográfico equilibra <strong>expresión y claridad</strong>. Combino una tipografía con mayor personalidad para los títulos (<code>Hobeaux Bold</code>) con una sans serif limpia para la información (<code>Avenir</code>), creando una identidad visual creativa, cercana y fácil de reconocer.</p>
+
+            <div class="typography-section">
+                <h3>Familias tipográficas</h3>
+                <div class="font-family-grid">
+                    <div class="font-family-card">
+                        <div class="font-sample primary-font">Hobeaux Bold</div>
+                        <div class="font-info">
+                            <h4>typography.fontFamilyPrimary</h4>
+                            <code>"Hobeaux Bold"</code>
+                            <p><strong>Fallback:</strong> BreeSerif (disponible en assets/fonts/)</p>
+                            <p class="font-usage">Títulos, nombres de proyectos, frases destacadas, elementos con presencia visual</p>
                         </div>
                     </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #274488;"></div>
-                        <div class="color-info">
-                            <h3>colors.primaryHover</h3>
-                            <code class="color-hex">#274488</code>
-                            <p class="color-role">Interacción</p>
-                            <p class="color-usage">Estados hover de botones primarios</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #7EA6D8;"></div>
-                        <div class="color-info">
-                            <h3>colors.primaryLight</h3>
-                            <code class="color-hex">#7EA6D8</code>
-                            <p class="color-role">Frescura</p>
-                            <p class="color-usage">Fondos, gráficos, elementos secundarios, bordes sutiles</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #C02D6E;"></div>
-                        <div class="color-info">
-                            <h3>colors.secondary</h3>
-                            <code class="color-hex">#C02D6E</code>
-                            <p class="color-role">Creatividad y personalidad</p>
-                            <p class="color-usage">Acentos, detalles, palabras clave, elementos destacados, botones de ícono</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #A0255A;"></div>
-                        <div class="color-info">
-                            <h3>colors.secondaryHover</h3>
-                            <code class="color-hex">#A0255A</code>
-                            <p class="color-role">Interacción</p>
-                            <p class="color-usage">Estados hover de acentos</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #F3A6C4;"></div>
-                        <div class="color-info">
-                            <h3>colors.secondaryLight</h3>
-                            <code class="color-hex">#F3A6C4</code>
-                            <p class="color-role">Cercanía y feminidad</p>
-                            <p class="color-usage">Fondos alternativos (tarjetas), detalles decorativos, estrellas</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #E0E0E0;"></div>
-                        <div class="color-info">
-                            <h3>colors.background</h3>
-                            <code class="color-hex">#FFFFFF</code>
-                            <p class="color-role">Claridad y equilibrio</p>
-                            <p class="color-usage">Base neutra, fondos principales</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #FAF8F6; border: 1px solid #E0E0E0;"></div>
-                        <div class="color-info">
-                            <h3>colors.backgroundWarm</h3>
-                            <code class="color-hex">#FAF8F6</code>
-                            <p class="color-role">Calidez orgánica</p>
-                            <p class="color-usage">Fondos alternativos para estética más cercana, tarjetas</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #3155A6;"></div>
-                        <div class="color-info">
-                            <h3>colors.text</h3>
-                            <code class="color-hex">#3155A6</code>
-                            <p class="color-role">Texto principal</p>
-                            <p class="color-usage">Títulos, cuerpo de texto</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #4A4A4A;"></div>
-                        <div class="color-info">
-                            <h3>colors.textSecondary</h3>
-                            <code class="color-hex">#4A4A4A</code>
-                            <p class="color-role">Texto secundario</p>
-                            <p class="color-usage">Textos auxiliares, descripciones</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #3155A6;"></div>
-                        <div class="color-info">
-                            <h3>colors.border</h3>
-                            <code class="color-hex">#3155A6</code>
-                            <p class="color-role">Bordes sutiles</p>
-                            <p class="color-usage">Campos, contenedores</p>
-                        </div>
-                    </div>
-                    <div class="color-card">
-                        <div class="color-swatch" style="background-color: #C02D6E;"></div>
-                        <div class="color-info">
-                            <h3>colors.borderFocus</h3>
-                            <code class="color-hex">#C02D6E</code>
-                            <p class="color-role">Foco/Activo</p>
-                            <p class="color-usage">Bordes en estado activo, interacción</p>
+                    <div class="font-family-card">
+                        <div class="font-sample secondary-font">Avenir</div>
+                        <div class="font-info">
+                            <h4>typography.fontFamilySecondary</h4>
+                            <code>"Avenir"</code>
+                            <p><strong>Fallback:</strong> NunitoSans (disponible en assets/fonts/)</p>
+                            <p class="font-usage">Subtítulos, textos, navegación, botones, enlaces, contenido general</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="ds-specs">
-                <style>
-                    .color-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                        gap: 20px;
-                    }
-                    .color-card {
-                        background: #FFFFFF;
-                        border: 1px solid #E0E0E0;
-                        border-radius: 12px;
-                        overflow: hidden;
-                        transition: box-shadow 0.2s ease;
-                    }
-                    .color-card:hover {
-                        box-shadow: 0 4px 12px rgba(49, 85, 166, 0.1);
-                    }
-                    .color-swatch {
-                        height: 80px;
-                        width: 100%;
-                    }
-                    .color-info {
-                        padding: 16px 20px;
-                    }
-                    .color-info h3 {
-                        margin: 0 0 8px;
-                        font-family: 'Hobeaux Bold', Avenir, sans-serif;
-                        font-size: 16px;
-                        font-weight: 700;
-                        color: #3155A6;
-                    }
-                    .color-hex {
-                        display: inline-block;
-                        background: #FAF8F6;
-                        padding: 4px 10px;
-                        border-radius: 6px;
-                        font-family: monospace;
-                        font-size: 13px;
-                        color: #4A4A4A;
-                        margin-bottom: 10px;
-                    }
-                    .color-role {
-                        margin: 0 0 6px;
-                        font-size: 14px;
-                        font-weight: 500;
-                        color: #3155A6;
-                    }
-                    .color-usage {
-                        margin: 0;
-                        font-size: 13px;
-                        color: #4A4A4A;
-                        line-height: 1.5;
-                    }
-                </style>
+            <div class="typography-section">
+                <h3>Jerarquía tipográfica</h3>
+                <p class="section-intro">La jerarquía se construye mediante <strong>tamaño, peso y contraste</strong> entre ambas tipografías. <code>Hobeaux Bold</code> aporta personalidad y expresión; <code>Avenir</code> genera equilibrio y legibilidad.</p>
+
+                <div class="type-scale">
+                    <div class="type-row">
+                        <div class="type-label">Título principal</div>
+                        <div class="type-sample display-sample">Título principal</div>
+                        <div class="type-meta">
+                            <code>48px</code> · <code>Bold (700)</code> · <code>Hobeaux Bold</code> · <code>line-height: 1.2</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeDisplay</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Título de sección</div>
+                        <div class="type-sample heading-sample">Título de sección</div>
+                        <div class="type-meta">
+                            <code>32px</code> · <code>Bold (700)</code> · <code>Hobeaux Bold</code> · <code>line-height: 1.2</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeHeading</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Subtítulo</div>
+                        <div class="type-sample subheading-sample">Subtítulo</div>
+                        <div class="type-meta">
+                            <code>20px</code> · <code>Medium (500)</code> · <code>Avenir</code> · <code>line-height: 1.5</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeSubheading</code>, <code>fontWeightMedium</code>, <code>lineHeightNormal</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Cuerpo de texto</div>
+                        <div class="type-sample body-sample">Cuerpo de texto — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                        <div class="type-meta">
+                            <code>16px</code> · <code>Regular (400)</code> · <code>Avenir</code> · <code>line-height: 1.6</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightRegular</code>, <code>lineHeightRelaxed</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Texto destacado</div>
+                        <div class="type-sample bold-sample">Texto destacado — énfasis dentro del cuerpo de texto</div>
+                        <div class="type-meta">
+                            <code>16px</code> · <code>Bold (700)</code> · <code>Avenir</code> · <code>line-height: 1.6</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightBold</code>, <code>lineHeightRelaxed</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Texto pequeño</div>
+                        <div class="type-sample small-sample">Texto pequeño — notas, captions, metadata</div>
+                        <div class="type-meta">
+                            <code>14px</code> · <code>Regular (400)</code> · <code>Avenir</code> · <code>line-height: 1.5</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeSmall</code>, <code>fontWeightRegular</code>, <code>lineHeightNormal</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Botones</div>
+                        <div class="type-sample button-sample">Botón principal</div>
+                        <div class="type-meta">
+                            <code>16px</code> · <code>Medium (500)</code> · <code>Avenir</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightMedium</code></span>
+                        </div>
+                    </div>
+                    <div class="type-row">
+                        <div class="type-label">Enlaces</div>
+                        <div class="type-sample link-sample">Enlace de navegación</div>
+                        <div class="type-meta">
+                            <code>16px</code> · <code>Medium (500)</code> · <code>Avenir</code>
+                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightMedium</code></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section id="typography">
-            <header class="section-header">
-                <h2>Typography</h2>
-                <p class="section-intro">Mi sistema tipográfico equilibra <strong>expresión y claridad</strong>. Combino una tipografía con mayor personalidad para los títulos (<code>Hobeaux Bold</code>) con una sans serif limpia para la información (<code>Avenir</code>), creando una identidad visual creativa, cercana y fácil de reconocer.</p>
-            </header>
+            <div class="typography-section">
+                <h3>Tokens de tipografía</h3>
+                <div class="token-table-container">
+                    <table class="token-table">
+                        <thead>
+                            <tr>
+                                <th>Token</th>
+                                <th>Valor</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>fontFamilyPrimary</code></td><td><code>"Hobeaux Bold"</code></td><td>Familia principal para títulos</td></tr>
+                            <tr><td><code>fontFamilySecondary</code></td><td><code>"Avenir"</code></td><td>Familia secundaria para texto</td></tr>
+                            <tr><td><code>fontSizeDisplay</code></td><td><code>48px</code></td><td>Título principal</td></tr>
+                            <tr><td><code>fontSizeHeading</code></td><td><code>32px</code></td><td>Título de sección</td></tr>
+                            <tr><td><code>fontSizeSubheading</code></td><td><code>20px</code></td><td>Subtítulo</td></tr>
+                            <tr><td><code>fontSizeBody</code></td><td><code>16px</code></td><td>Cuerpo de texto, botones, enlaces</td></tr>
+                            <tr><td><code>fontSizeSmall</code></td><td><code>14px</code></td><td>Texto pequeño, captions</td></tr>
+                            <tr><td><code>fontWeightBold</code></td><td><code>700</code></td><td>Peso bold</td></tr>
+                            <tr><td><code>fontWeightMedium</code></td><td><code>500</code></td><td>Peso medium</td></tr>
+                            <tr><td><code>fontWeightRegular</code></td><td><code>400</code></td><td>Peso regular</td></tr>
+                            <tr><td><code>lineHeightTight</code></td><td><code>1.2</code></td><td>Interlineado para títulos</td></tr>
+                            <tr><td><code>lineHeightNormal</code></td><td><code>1.5</code></td><td>Interlineado para subtítulos y texto pequeño</td></tr>
+                            <tr><td><code>lineHeightRelaxed</code></td><td><code>1.6</code></td><td>Interlineado para cuerpo de texto</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-</div>
+            <style>
+                .typography-section {
+                    margin-top: 32px;
+                }
+                .typography-section h3 {
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #3155A6;
+                    margin-bottom: 16px;
+                    padding-bottom: 8px;
+                    border-bottom: 2px solid #7EA6D8;
+                }
 
-            <div class="ds-specs">
-                <style>
-                    .font-family-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                        gap: 24px;
-                        margin-top: 16px;
-                    }
-                    .font-family-card {
-                        background: #FFFFFF;
-                        border: 1px solid #E0E0E0.
-                        border-radius: 12px.
-                        overflow: hidden.
-                    }
-                    .font-sample {
-                        padding: 40px 24px.
-                        text-align: center.
-                        font-size: 32px.
-                        font-weight: 700.
-                    }
-                    .font-sample.primary-font {
-                        background: #3155A6.
-                        color: #FFFFFF.
-                        font-family: 'BreeSerif', Georgia, serif.
-                    }
-                    .font-sample.secondary-font {
-                        background: #FAF8F6.
-                        color: #3155A6.
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-weight: 500.
-                    }
-                    .font-info {
-                        padding: 20px 24px.
-                    }
-                    .font-info h4 {
-                        margin: 0 0 8px.
-                        font-family: 'Hobeaux Bold', Avenir, sans-serif.
-                        font-size: 16px.
-                        font-weight: 700.
-                        color: #3155A6.
-                    }
-                    .font-info code {
-                        display: inline-block.
-                        background: #FAF8F6.
-                        padding: 4px 10px.
-                        border-radius: 6px.
-                        font-family: monospace.
-                        font-size: 13px.
-                        color: #4A4A4A.
-                        margin-bottom: 10px.
-                    }
-                    .font-info p {
-                        margin: 6px 0.
-                        font-size: 14px.
-                        color: #4A4A4A.
-                        line-height: 1.5.
-                    }
-                    .font-usage {
-                        font-weight: 500.
-                        color: #3155A6 !important.
-                    }
+                .font-family-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 24px;
+                    margin-top: 16px;
+                }
+                .font-family-card {
+                    background: #FFFFFF;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 12px;
+                    overflow: hidden;
+                }
+                .font-sample {
+                    padding: 40px 24px;
+                    text-align: center;
+                    font-size: 32px;
+                    font-weight: 700;
+                }
+                .font-sample.primary-font {
+                    background: #3155A6;
+                    color: #FFFFFF;
+                    font-family: 'BreeSerif', Georgia, serif;
+                }
+                .font-sample.secondary-font {
+                    background: #FAF8F6;
+                    color: #3155A6;
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-weight: 500;
+                }
+                .font-info {
+                    padding: 20px 24px;
+                }
+                .font-info h4 {
+                    margin: 0 0 8px;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #3155A6;
+                }
+                .font-info code {
+                    display: inline-block;
+                    background: #FAF8F6;
+                    padding: 4px 10px;
+                    border-radius: 6px;
+                    font-family: monospace;
+                    font-size: 13px;
+                    color: #4A4A4A;
+                    margin-bottom: 10px;
+                }
+                .font-info p {
+                    margin: 6px 0;
+                    font-size: 14px;
+                    color: #4A4A4A;
+                    line-height: 1.5;
+                }
+                .font-usage {
+                    font-weight: 500;
+                    color: #3155A6 !important;
+                }
 
-                    .type-scale {
-                        margin-top: 16px.
-                    }
+                .type-scale {
+                    margin-top: 16px;
+                }
+                .type-row {
+                    display: grid;
+                    grid-template-columns: 160px 1fr;
+                    gap: 24px;
+                    align-items: start;
+                    padding: 24px 0;
+                    border-bottom: 1px solid #E0E0E0;
+                }
+                .type-row:last-child {
+                    border-bottom: none;
+                }
+                .type-label {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #3155A6;
+                    padding-top: 8px;
+                }
+                .type-sample {
+                    padding: 16px 20px;
+                    background: #FAF8F6;
+                    border-radius: 8px;
+                    border: 1px solid #E0E0E0;
+                }
+                .display-sample {
+                    font-family: 'BreeSerif', Georgia, serif;
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: #3155A6;
+                }
+                .heading-sample {
+                    font-family: 'BreeSerif', Georgia, serif;
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: #3155A6;
+                }
+                .subheading-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: #3155A6;
+                }
+                .body-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.6;
+                    color: #4A4A4A;
+                }
+                .bold-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1.6;
+                    color: #3155A6;
+                }
+                .small-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    color: #4A4A4A;
+                }
+                .button-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    background: #3155A6;
+                    border: none;
+                    display: inline-block;
+                    padding: 12px 24px;
+                    border-radius: 12px;
+                }
+                .link-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #3155A6;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
+                .type-meta {
+                    font-size: 13px;
+                    color: #4A4A4A;
+                    line-height: 1.6;
+                }
+                .token-ref {
+                    font-family: monospace;
+                    color: #C02D6E;
+                }
+
+                .token-table-container {
+                    overflow-x: auto;
+                    margin-top: 16px;
+                }
+                .token-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 14px;
+                }
+                .token-table th,
+                .token-table td {
+                    padding: 12px 16px;
+                    text-align: left;
+                    border-bottom: 1px solid #E0E0E0;
+                }
+                .token-table th {
+                    background: #FAF8F6;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-weight: 700;
+                    color: #3155A6;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+                .token-table td {
+                    color: #4A4A4A;
+                }
+                .token-table td:first-child {
+                    font-family: monospace;
+                    color: #3155A6;
+                    font-weight: 500;
+                }
+                .token-table td:nth-child(2) {
+                    font-family: monospace;
+                    background: #FAF8F6;
+                    color: #4A4A4A;
+                }
+                .token-table tr:hover td {
+                    background: #FAF8F6;
+                }
+
+                @font-face {
+                    font-family: 'BreeSerif';
+                    src: url('assets/fonts/BreeSerif-Regular.ttf') format('truetype');
+                    font-weight: 400;
+                    font-style: normal;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: 'NunitoSans';
+                    src: url('assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype-variations');
+                    font-weight: 200 900;
+                    font-style: normal;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: 'NunitoSans';
+                    src: url('assets/fonts/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype-variations');
+                    font-weight: 200 900;
+                    font-style: italic;
+                    font-display: swap;
+                }
+
+                @media (max-width: 768px) {
                     .type-row {
-                        display: grid.
-                        grid-template-columns: 160px 1fr.
-                        gap: 24px.
-                        align-items: start.
-                        padding: 24px 0.
-                        border-bottom: 1px solid #E0E0E0.
-                    }
-                    .type-row:last-child {
-                        border-bottom: none.
+                        grid-template-columns: 1fr;
+                        gap: 12px;
                     }
                     .type-label {
-                        font-size: 14px.
-                        font-weight: 500.
-                        color: #3155A6.
-                        padding-top: 8px.
+                        padding-top: 0;
                     }
-                    .type-sample {
-                        padding: 16px 20px.
-                        background: #FAF8F6.
-                        border-radius: 8px.
-                        border: 1px solid #E0E0E0.
+                    .font-sample {
+                        font-size: 24px;
+                        padding: 30px 20px;
                     }
                     .display-sample {
-                        font-family: 'BreeSerif', Georgia, serif.
-                        font-size: 48px.
-                        font-weight: 700.
-                        line-height: 1.2.
-                        color: #3155A6.
+                        font-size: 36px;
                     }
                     .heading-sample {
-                        font-family: 'BreeSerif', Georgia, serif.
-                        font-size: 32px.
-                        font-weight: 700.
-                        line-height: 1.2.
-                        color: #3155A6.
+                        font-size: 28px;
                     }
-                    .subheading-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 20px.
-                        font-weight: 500.
-                        line-height: 1.5.
-                        color: #3155A6.
-                    }
-                    .body-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 16px.
-                        font-weight: 400.
-                        line-height: 1.6.
-                        color: #4A4A4A.
-                    }
-                    .bold-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 16px.
-                        font-weight: 700.
-                        line-height: 1.6.
-                        color: #3155A6.
-                    }
-                    .small-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 14px.
-                        font-weight: 400.
-                        line-height: 1.5.
-                        color: #4A4A4A.
-                    }
-                    .button-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 16px.
-                        font-weight: 500.
-                        color: #FFFFFF.
-                        background: #3155A6.
-                        border: none.
-                        display: inline-block.
-                        padding: 12px 24px.
-                        border-radius: 12px.
-                    }
-                    .link-sample {
-                        font-family: 'NunitoSans', system-ui, sans-serif.
-                        font-size: 16px.
-                        font-weight: 500.
-                        color: #3155A6.
-                        text-decoration: underline.
-                        text-underline-offset: 2px.
-                    }
-                    .type-meta {
-                        font-size: 13px.
-                        color: #4A4A4A.
-                        line-height: 1.6.
-                    }
-                    .token-ref {
-                        font-family: monospace.
-                        color: #C02D6E.
-                    }
-
-                    .token-table-container {
-                        overflow-x: auto.
-                        margin-top: 16px.
-                    }
-                    .token-table {
-                        width: 100%.
-                        border-collapse: collapse.
-                        font-size: 14px.
-                    }
-                    .token-table th,
-                    .token-table td {
-                        padding: 12px 16px.
-                        text-align: left.
-                        border-bottom: 1px solid #E0E0E0.
-                    }
-                    .token-table th {
-                        background: #FAF8F6.
-                        font-family: 'Hobeaux Bold', Avenir, sans-serif.
-                        font-weight: 700.
-                        color: #3155A6.
-                        font-size: 13px.
-                        text-transform: uppercase.
-                        letter-spacing: 0.5px.
-                    }
-                    .token-table td {
-                        color: #4A4A4A.
-                    }
-                    .token-table td:first-child {
-                        font-family: monospace.
-                        color: #3155A6.
-                        font-weight: 500.
-                    }
-                    .token-table td:nth-child(2) {
-                        font-family: monospace.
-                        background: #FAF8F6.
-                        color: #4A4A4A.
-                    }
-                    .token-table tr:hover td {
-                        background: #FAF8F6.
-                    }
-
-                    @font-face {
-                        font-family: 'BreeSerif'.
-                        src: url('assets/fonts/BreeSerif-Regular.ttf') format('truetype').
-                        font-weight: 400.
-                        font-style: normal.
-                        font-display: swap.
-                    }
-                    @font-face {
-                        font-family: 'NunitoSans'.
-                        src: url('assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype-variations').
-                        font-weight: 200 900.
-                        font-style: normal.
-                        font-display: swap.
-                    }
-                    @font-face {
-                        font-family: 'NunitoSans'.
-                        src: url('assets/fonts/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype-variations').
-                        font-weight: 200 900.
-                        font-style: italic.
-                        font-display: swap.
-                    }
-
-                    @media (max-width: 768px) {
-                        .type-row {
-                            grid-template-columns: 1fr.
-                            gap: 12px.
-                        }
-                        .type-label {
-                            padding-top: 0.
-                        }
-                        .font-sample {
-                            font-size: 24px.
-                            padding: 30px 20px.
-                        }
-                        .display-sample {
-                            font-size: 36px.
-                        }
-                        .heading-sample {
-                            font-size: 28px.
-                        }
-                    }
-                </style>
-            </div>
+                }
+            </style>
         </section>
 
         <section id="layout">
-            <header class="section-header">
-                <h2>Layout</h2>
-                <p class="section-intro">Mi composición mantiene un <strong>equilibrio entre orden y libertad creativa</strong>. Utilizo el espacio para darle protagonismo a cada proyecto y evitar que los elementos compitan entre sí, sin limitarme a estructuras completamente rígidas.</p>
-            </header>
+            <h2>Layout</h2>
+            <p class="section-intro">Mi composición mantiene un <strong>equilibrio entre orden y libertad creativa</strong>. Utilizo el espacio para darle protagonismo a cada proyecto y evitar que los elementos compitan entre sí, sin limitarme a estructuras completamente rígidas.</p>
 
             <div class="layout-section">
                 <h3>Espaciado</h3>
@@ -4142,8 +4065,6 @@
         }
     </style>
 </section>
-            </div>
-        </div>
-    </main>
+</main>
 </body>
 </html>
