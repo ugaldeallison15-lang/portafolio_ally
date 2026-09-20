@@ -442,34 +442,40 @@
         }
 
         /* Token rows in component specs */
-        .token-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        .token-row code:first-child {
-            background: #FFFFFF;
-            padding: 2px 8px;
-            border-radius: 6px;
-            color: #0000FF;
-            font-weight: 500;
-            min-width: 140px;
-            display: inline-block;
-            border: 1px solid #E0E0E0;
-        }
-        .token-row code:nth-child(2) {
-            color: #4A4A4A;
-        }
-        .token-value {
-            font-family: monospace;
-            font-size: 13px;
-            color: #FF66CC;
-            font-weight: 500;
-            margin-left: auto;
-        }
+.token-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    margin-bottom: 10px;
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+                .token-row code:first-child {
+                    background: #FFFFFF;
+                    padding: 2px 8px;
+                    border-radius: 6px;
+                    color: #0000FF;
+                    font-weight: 500;
+                    min-width: 160px;
+                    max-width: 200px;
+                    display: inline-block;
+                    border: 1px solid #E0E0E0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .token-row code:nth-child(2) {
+                    color: #4A4A4A;
+                    flex: 0 0 auto;
+                }
+                .token-value {
+                    font-family: monospace;
+                    font-size: 13px;
+                    color: #FF66CC;
+                    font-weight: 500;
+                    margin-left: auto;
+                    white-space: nowrap;
+                }
 
         /* Token ref styling */
         .token-ref {
@@ -3150,10 +3156,11 @@
                     background: #FFFFFF;
                     border: 1px solid #E0E0E0;
                     border-radius: 12px;
-                    padding: 24px;
+                    padding: 16px;
                     height: fit-content;
                     position: sticky;
                     top: 24px;
+                    max-width: 340px;
                 }
 
                 .card-tokens-panel h4 {
