@@ -175,6 +175,359 @@
             .ds-hero { padding: 60px 20px 48px; }
             .ds-nav__link { padding: 12px 14px; font-size: 13px; }
         }
+
+        /* ========================================
+           LAYOUT & VISUAL REFINEMENTS
+           ======================================== */
+
+        /* Main container - centered with max-width and comfortable lateral space */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        @media (max-width: 1024px) {
+            main { padding: 0 28px; }
+        }
+        @media (max-width: 768px) {
+            main { padding: 0 24px; }
+        }
+        @media (max-width: 480px) {
+            main { padding: 0 20px; }
+        }
+
+        /* Vertical rhythm between sections */
+        section {
+            padding: 64px 0;
+            border-top: 1px solid rgba(49, 85, 166, 0.06);
+        }
+        section:first-of-type {
+            border-top: none;
+            padding-top: 32px;
+        }
+        @media (max-width: 768px) {
+            section { padding: 48px 0; }
+        }
+
+        /* Section header consistency */
+        section > h2,
+        section > h3:first-of-type {
+            margin: 0 0 8px;
+            font-family: "Hobeaux Bold", "BreeSerif", Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #3155A6;
+        }
+        .section-intro {
+            margin: 0 0 32px;
+            font-family: "Avenir", "NunitoSans", system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4A4A4A;
+            max-width: 720px;
+        }
+
+        /* Card-like appearance for existing blocks */
+        .color-card,
+        .color-card *,
+        .font-family-card,
+        .component-section,
+        .button-variant,
+        .card-example,
+        .card-tokens-panel,
+        .card-example-small,
+        .input-state,
+        .link-state,
+        .socialicon-state,
+        .star-state,
+        .elevation-card,
+        .radius-card,
+        .shape-demo,
+        .breakpoint-card,
+        .whitespace-example,
+        .dnd-column {
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(49, 85, 166, 0.04);
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+        .color-card:hover,
+        .font-family-card:hover,
+        .button-variant:hover,
+        .card-example:hover,
+        .card-example-small:hover,
+        .input-state:hover,
+        .link-state:hover,
+        .socialicon-state:hover,
+        .star-state:hover,
+        .elevation-card:hover,
+        .radius-card:hover,
+        .shape-demo:hover,
+        .breakpoint-card:hover,
+        .whitespace-example:hover {
+            box-shadow: 0 8px 24px rgba(49, 85, 166, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Ensure color-swatch and similar visual elements don't get card styling */
+        .color-swatch,
+        .font-sample,
+        .spacing-bar,
+        .ruler-bar,
+        .grid-col,
+        .demo-box,
+        .shape-circle,
+        .shape-rect,
+        .shape-organic,
+        .radius-visual,
+        .elevation-demo,
+        .card-image,
+        .card-image-small,
+        .social-icon,
+        .btn,
+        .link,
+        .star,
+        .spaced-item,
+        .content-block {
+            box-shadow: none !important;
+            transform: none !important;
+            border: none !important;
+            background: inherit !important;
+            border-radius: 0 !important;
+        }
+
+        /* Grid clarity for existing grid-based demos */
+        .color-grid,
+        .font-family-grid,
+        .button-group,
+        .grid-breakpoints,
+        .whitespace-demo,
+        .elevation-grid,
+        .radius-grid,
+        .shape-types,
+        .dnd-wrapper {
+            display: grid;
+            gap: 24px;
+        }
+        .color-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+        .font-family-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        .button-group {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+        .grid-breakpoints,
+        .whitespace-demo {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        .elevation-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        .radius-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+        .shape-types {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+        .dnd-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 1024px) {
+            .color-grid,
+            .font-family-grid,
+            .button-group,
+            .grid-breakpoints,
+            .whitespace-demo,
+            .elevation-grid,
+            .radius-grid,
+            .shape-types {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+            .dnd-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .color-grid,
+            .font-family-grid,
+            .button-group,
+            .grid-breakpoints,
+            .whitespace-demo,
+            .elevation-grid,
+            .radius-grid,
+            .shape-types {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Visual separation for token tables */
+        .token-table-container {
+            margin-top: 32px;
+            padding: 16px;
+            background: #FAF8F6;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+        .token-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .token-table th,
+        .token-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .token-table th {
+            background: #FFFFFF;
+            font-family: "Hobeaux Bold", "BreeSerif", Georgia, serif;
+            font-weight: 700;
+            color: #3155A6;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .token-table td {
+            color: #4A4A4A;
+        }
+        .token-table td:first-child {
+            font-family: monospace;
+            color: #3155A6;
+            font-weight: 500;
+        }
+        .token-table td:nth-child(2) {
+            font-family: monospace;
+            background: #FAF8F6;
+            color: #4A4A4A;
+        }
+        .token-table tr:hover td {
+            background: #F3F1FF;
+        }
+
+        /* Token rows in component specs */
+        .token-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .token-row code:first-child {
+            background: #FFFFFF;
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #3155A6;
+            font-weight: 500;
+            min-width: 140px;
+            display: inline-block;
+            border: 1px solid #E0E0E0;
+        }
+        .token-row code:nth-child(2) {
+            color: #4A4A4A;
+        }
+        .token-value {
+            font-family: monospace;
+            font-size: 13px;
+            color: #C02D6E;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        /* Token ref styling */
+        .token-ref {
+            font-family: monospace;
+            font-size: 12px;
+            color: #C02D6E;
+            font-weight: 400;
+            margin-left: 6px;
+        }
+
+        /* Component section internal spacing */
+        .component-section {
+            margin-top: 48px;
+        }
+        .component-section h3 {
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #7EA6D8;
+        }
+        .component-section h4 {
+            margin: 0 0 12px;
+            font-family: "Hobeaux Bold", "BreeSerif", Georgia, serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #3155A6;
+        }
+
+        /* Star refinements */
+        .star-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 24px 0;
+        }
+        .star-labels {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .star-label {
+            text-align: center;
+        }
+        .star-label code {
+            background: #FAF8F6;
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #3155A6;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .star-label .token-value {
+            display: block;
+            font-size: 13px;
+            color: #C02D6E;
+            font-weight: 500;
+        }
+
+        /* Star sizes */
+        .star-sizes-row {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 16px;
+        }
+        .star-size-demo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .size-label code {
+            background: #FAF8F6;
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #3155A6;
+            font-weight: 500;
+        }
+
+        /* Responsive refinements */
+        @media (max-width: 1024px) {
+            .ds-hero__content { max-width: 100%; }
+        }
+        @media (max-width: 768px) {
+            .section-intro { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
