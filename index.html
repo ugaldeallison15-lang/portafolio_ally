@@ -504,8 +504,22 @@
       max-width: 280px;
       margin-top: var(--sp-xl);
     }
-    .hero__cta {
-      width: 100%;
+    .hero__logo-img {
+      animation: logoEntrance 1s ease-out forwards, logoStarGlow 1s ease-out 0.2s forwards;
+    }
+
+    .hero__tagline--animate {
+      animation: textEntrance 0.8s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__logo-img,
+      .hero__tagline--animate {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
     }
 
     /* ========================================
@@ -727,8 +741,8 @@
     .project-card__category {
       display: inline-block;
       padding: var(--sp-xs) var(--sp-sm);
-      background: var(--color-primary-light);
-      color: var(--color-primary);
+      background: var(--color-primary);
+      color: var(--color-bg);
       font-family: var(--font-secondary);
       font-size: var(--fs-small);
       font-weight: var(--fw-medium);
@@ -1182,6 +1196,51 @@
         transform: scale(1) translateY(0);
       }
     }
+
+    @keyframes logoEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-8px) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes logoStarGlow {
+      0% {
+        transform: rotate(0deg) scale(0.8);
+        filter: drop-shadow(0 0 0 transparent);
+      }
+      40% {
+        transform: rotate(180deg) scale(1.05);
+        filter: drop-shadow(0 0 20px rgba(255, 102, 204, 0.6));
+      }
+      70% {
+        transform: rotate(320deg) scale(1.02);
+        filter: drop-shadow(0 0 12px rgba(255, 102, 204, 0.4));
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+        filter: drop-shadow(0 0 0 transparent);
+      }
+    }
+
+    @keyframes textEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -1237,9 +1296,9 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain;">
+  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
 </h1>
-          <p class="hero__tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
+          <p class="hero__tagline hero__tagline--animate" id="hero-tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
           <div class="hero__ctas">
             <a href="#portfolio" class="btn btn--primary hero__cta">Ver portafolio</a>
@@ -1272,11 +1331,11 @@
         <div class="portfolio__grid">
           <!-- Proyecto 1: Pedro (Identidad / Campaña) -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/pedro1.png" alt="Proyecto Pedro - Identidad visual" loading="lazy">
+            <img class="project-card__image" src="assets/img/pedrologo.png" alt="Proyecto Pedro Friedberg - Identidad visual" loading="lazy">
             <div class="project-card__content">
               <span class="project-card__category">Identidad visual & Campaña</span>
-              <h3 class="project-card__title">Pedro</h3>
-              <p class="project-card__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro.</p>
+              <h3 class="project-card__title">Pedro Friedberg</h3>
+              <p class="project-card__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro Friedberg.</p>
               <a href="#modal-pedro" class="project-card__link" data-modal="pedro">
                 Ver proyecto
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -1449,12 +1508,12 @@
       </button>
       <div class="modal__content">
         <div class="modal__image-wrapper">
-          <img src="assets/img/pedro1.png" alt="Pedro - Identidad visual" loading="lazy">
+          <img src="assets/img/pedrologo.png" alt="Pedro Friedberg - Identidad visual" loading="lazy">
         </div>
         <div class="modal__info">
           <span class="modal__category">Identidad visual & Campaña</span>
-          <h2 id="modal-pedro-title" class="modal__title">Pedro</h2>
-          <p class="modal__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro. Incluye logotipo, sistema de color, tipografía y aplicaciones en diversos formatos.</p>
+          <h2 id="modal-pedro-title" class="modal__title">Pedro Friedberg</h2>
+          <p class="modal__description">Desarrollo de identidad visual y piezas de campaña para marca Pedro Friedberg. Incluye logotipo, sistema de color, tipografía y aplicaciones en diversos formatos.</p>
           <div class="modal__gallery">
             <img src="assets/img/pedro2.png" alt="Pedro - Aplicación 1" loading="lazy">
             <img src="assets/img/pedro3.png" alt="Pedro - Aplicación 2" loading="lazy">
