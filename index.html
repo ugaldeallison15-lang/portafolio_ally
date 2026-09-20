@@ -770,46 +770,61 @@
       flex-shrink: 0;
     }
 
-    /* ========================================
-       PROCESS
-       ======================================== */
+/* ========================================
+        PROCESS - TIMELINE
+        ======================================== */
     .process__steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--sp-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-xl);
+      position: relative;
+      padding-left: var(--sp-xl);
     }
-    @media (min-width: 768px) {
-      .process__steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 1024px) {
-      .process__steps {
-        grid-template-columns: repeat(4, 1fr);
-      }
+    .process__steps::before {
+      content: '';
+      position: absolute;
+      left: calc(var(--sp-xl) - 2px);
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+      border-radius: var(--rd-full);
     }
 
     .process-step {
-      background: var(--color-bg);
-      border: 1px solid rgba(49, 85, 166, 0.1);
-      border-radius: var(--rd-md);
-      padding: var(--sp-lg) var(--sp-md);
-      text-align: center;
       position: relative;
+      padding-left: var(--sp-lg);
+      background: transparent;
+      border: none;
+      text-align: left;
+    }
+    .process-step::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--sp-xl) - 10px);
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      background: var(--color-secondary);
+      border: 3px solid var(--color-bg);
+      border-radius: var(--rd-full);
+      box-shadow: 0 0 0 3px var(--color-secondary);
+      z-index: 1;
     }
     .process-step__number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--color-primary);
+      width: 36px;
+      height: 36px;
+      background: var(--color-secondary);
       color: var(--color-bg);
       font-family: var(--font-primary);
-      font-size: var(--fs-body);
+      font-size: var(--fs-small);
       font-weight: var(--fw-bold);
       border-radius: var(--rd-full);
-      margin-bottom: var(--sp-md);
+      margin-bottom: var(--sp-xs);
+      box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 6px var(--color-secondary);
     }
     .process-step__title {
       margin: 0 0 var(--sp-xs);
@@ -826,6 +841,29 @@
       font-weight: var(--fw-regular);
       line-height: var(--lh-normal);
       color: var(--color-text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .process__steps {
+        padding-left: calc(var(--sp-xl) + 20px);
+      }
+      .process__steps::before {
+        left: calc(var(--sp-xl) + 18px);
+      }
+      .process-step::before {
+        left: calc(-1 * var(--sp-xl) - 40px);
+      }
+    }
+    @media (min-width: 1024px) {
+      .process__steps {
+        padding-left: calc(var(--sp-xl) + 40px);
+      }
+      .process__steps::before {
+        left: calc(var(--sp-xl) + 38px);
+      }
+      .process-step::before {
+        left: calc(-1 * var(--sp-xl) - 60px);
+      }
     }
 
     /* ========================================
@@ -1147,7 +1185,9 @@
        ======================================== -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="#hero" class="header__logo" aria-label="Ally Villagómez - Inicio">Ally Villagómez</a>
+      <a href="#hero" class="header__logo" aria-label="Ally Villagómez - Inicio">
+        <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 48px; width: auto; object-fit: contain;">
+      </a>
 
       <nav class="nav" id="main-nav" aria-label="Navegación principal">
         <ul class="nav__list">
@@ -1156,11 +1196,7 @@
           <li><a href="#portfolio" class="nav__link">Portafolio</a></li>
           <li><a href="#skills" class="nav__link">Habilidades</a></li>
           <li><a href="#contact" class="nav__link">Contacto</a></li>
-          <li><a href="#overview" class="ds-nav__logo ds-nav__logo--end" href="#overview" aria-label="Ally Villagómez - Inicio">
-              <img src="assets/img/Logo ally.jpg" alt="" width="40" height="40" style="border-radius: 8px;">
-            </a></li>
         </ul>
-      </nav>
 
       <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1194,7 +1230,7 @@
         <!-- Contenido hero -->
         <div class="hero__content">
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 400px; width: auto; object-fit: contain;">
+  <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" style="height: 500px; width: auto; object-fit: contain;">
 </h1>
           <p class="hero__tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
 
