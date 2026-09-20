@@ -739,6 +739,7 @@
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      object-position: center;
       background: var(--color-primary-light);
     }
     .project-card__content {
@@ -928,18 +929,18 @@
       display: inline-flex;
       align-items: center;
       padding: var(--sp-xs) var(--sp-md);
-      background: var(--color-primary-light);
-      color: var(--color-primary);
+      background: var(--color-secondary);
+      color: #FFFFFF;
       font-family: var(--font-secondary);
       font-size: var(--fs-small);
       font-weight: var(--fw-medium);
       border-radius: var(--rd-sm);
-      border: 1px solid var(--color-primary);
+      border: 1px solid var(--color-secondary);
     }
     .skill-tag--tool {
       background: var(--color-bg);
       color: var(--color-text-secondary);
-      border-color: rgba(49, 85, 166, 0.2);
+      border-color: rgba(255, 102, 204, 0.2);
     }
     .skill-tag--tool:hover {
       background: var(--color-secondary-light);
@@ -1377,7 +1378,7 @@
 
           <!-- Proyecto 5: Campaña SIMI -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/campaña simi.png" alt="Proyecto Campaña SIMI" loading="lazy">
+            <img class="project-card__image" src="assets/img/campañasimi.png" alt="Proyecto Campaña SIMI" loading="lazy" style="object-fit: cover; object-position: center 20%;">
             <div class="project-card__content">
               <span class="project-card__category">Campaña</span>
               <h3 class="project-card__title">Campaña SIMI</h3>
@@ -1622,7 +1623,7 @@
       </button>
       <div class="modal__content">
         <div class="modal__image-wrapper">
-          <img src="assets/img/campaña simi.png" alt="Campaña SIMI Fest" loading="lazy">
+          <img src="assets/img/campañasimi.png" alt="Campaña SIMI Fest" loading="lazy">
         </div>
         <div class="modal__info">
           <span class="modal__category">Campaña</span>
