@@ -1046,71 +1046,94 @@
                 <h3>Jerarquía tipográfica</h3>
                 <p class="section-intro">La jerarquía se construye mediante <strong>tamaño, peso y contraste</strong> entre ambas tipografías. <code>Hobeaux Bold</code> aporta personalidad y expresión; <code>Avenir</code> genera equilibrio y legibilidad.</p>
 
-                <div class="type-scale">
-                    <div class="type-row">
-                        <div class="type-label">Título principal</div>
-                        <div class="type-sample display-sample">Título principal</div>
-                        <div class="type-meta">
-                            <code>48px</code> · <code>Bold (700)</code> · <code>Hobeaux Bold</code> · <code>line-height: 1.2</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeDisplay</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Título de sección</div>
-                        <div class="type-sample heading-sample">Título de sección</div>
-                        <div class="type-meta">
-                            <code>32px</code> · <code>Bold (700)</code> · <code>Hobeaux Bold</code> · <code>line-height: 1.2</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeHeading</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Subtítulo</div>
-                        <div class="type-sample subheading-sample">Subtítulo</div>
-                        <div class="type-meta">
-                            <code>20px</code> · <code>Medium (500)</code> · <code>Avenir</code> · <code>line-height: 1.5</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeSubheading</code>, <code>fontWeightMedium</code>, <code>lineHeightNormal</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Cuerpo de texto</div>
-                        <div class="type-sample body-sample">Cuerpo de texto — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        <div class="type-meta">
-                            <code>16px</code> · <code>Regular (400)</code> · <code>Avenir</code> · <code>line-height: 1.6</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightRegular</code>, <code>lineHeightRelaxed</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Texto destacado</div>
-                        <div class="type-sample bold-sample">Texto destacado — énfasis dentro del cuerpo de texto</div>
-                        <div class="type-meta">
-                            <code>16px</code> · <code>Bold (700)</code> · <code>Avenir</code> · <code>line-height: 1.6</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightBold</code>, <code>lineHeightRelaxed</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Texto pequeño</div>
-                        <div class="type-sample small-sample">Texto pequeño — notas, captions, metadata</div>
-                        <div class="type-meta">
-                            <code>14px</code> · <code>Regular (400)</code> · <code>Avenir</code> · <code>line-height: 1.5</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeSmall</code>, <code>fontWeightRegular</code>, <code>lineHeightNormal</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Botones</div>
-                        <div class="type-sample button-sample">Botón principal</div>
-                        <div class="type-meta">
-                            <code>16px</code> · <code>Medium (500)</code> · <code>Avenir</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightMedium</code></span>
-                        </div>
-                    </div>
-                    <div class="type-row">
-                        <div class="type-label">Enlaces</div>
-                        <div class="type-sample link-sample">Enlace de navegación</div>
-                        <div class="type-meta">
-                            <code>16px</code> · <code>Medium (500)</code> · <code>Avenir</code>
-                            <br><span class="token-ref">Tokens: <code>fontSizeBody</code>, <code>fontWeightMedium</code></span>
-                        </div>
-                    </div>
+                <div class="type-scale-compact">
+                    <table class="type-table">
+                        <thead>
+                            <tr>
+                                <th>Nivel</th>
+                                <th>Muestra</th>
+                                <th>Tamaño</th>
+                                <th>Peso</th>
+                                <th>Familia</th>
+                                <th>Line-height</th>
+                                <th>Tokens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Título principal</strong></td>
+                                <td class="type-cell"><span class="display-sample">Título principal</span></td>
+                                <td><code>48px</code></td>
+                                <td><code>Bold (700)</code></td>
+                                <td>Hobeaux Bold</td>
+                                <td><code>1.2</code></td>
+                                <td><span class="token-ref"><code>fontSizeDisplay</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Título de sección</strong></td>
+                                <td class="type-cell"><span class="heading-sample">Título de sección</span></td>
+                                <td><code>32px</code></td>
+                                <td><code>Bold (700)</code></td>
+                                <td>Hobeaux Bold</td>
+                                <td><code>1.2</code></td>
+                                <td><span class="token-ref"><code>fontSizeHeading</code>, <code>fontWeightBold</code>, <code>lineHeightTight</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subtítulo</strong></td>
+                                <td class="type-cell"><span class="subheading-sample">Subtítulo</span></td>
+                                <td><code>20px</code></td>
+                                <td><code>Medium (500)</code></td>
+                                <td>Avenir</td>
+                                <td><code>1.5</code></td>
+                                <td><span class="token-ref"><code>fontSizeSubheading</code>, <code>fontWeightMedium</code>, <code>lineHeightNormal</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cuerpo de texto</strong></td>
+                                <td class="type-cell"><span class="body-sample">Cuerpo de texto — Lorem ipsum dolor sit amet...</span></td>
+                                <td><code>16px</code></td>
+                                <td><code>Regular (400)</code></td>
+                                <td>Avenir</td>
+                                <td><code>1.6</code></td>
+                                <td><span class="token-ref"><code>fontSizeBody</code>, <code>fontWeightRegular</code>, <code>lineHeightRelaxed</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texto destacado</strong></td>
+                                <td class="type-cell"><span class="bold-sample">Texto destacado — énfasis dentro del cuerpo</span></td>
+                                <td><code>16px</code></td>
+                                <td><code>Bold (700)</code></td>
+                                <td>Avenir</td>
+                                <td><code>1.6</code></td>
+                                <td><span class="token-ref"><code>fontSizeBody</code>, <code>fontWeightBold</code>, <code>lineHeightRelaxed</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texto pequeño</strong></td>
+                                <td class="type-cell"><span class="small-sample">Texto pequeño — notas, captions, metadata</span></td>
+                                <td><code>14px</code></td>
+                                <td><code>Regular (400)</code></td>
+                                <td>Avenir</td>
+                                <td><code>1.5</code></td>
+                                <td><span class="token-ref"><code>fontSizeSmall</code>, <code>fontWeightRegular</code>, <code>lineHeightNormal</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Botones</strong></td>
+                                <td class="type-cell"><span class="button-sample">Botón principal</span></td>
+                                <td><code>16px</code></td>
+                                <td><code>Medium (500)</code></td>
+                                <td>Avenir</td>
+                                <td>—</td>
+                                <td><span class="token-ref"><code>fontSizeBody</code>, <code>fontWeightMedium</code></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enlaces</strong></td>
+                                <td class="type-cell"><span class="link-sample">Enlace de navegación</span></td>
+                                <td><code>16px</code></td>
+                                <td><code>Medium (500)</code></td>
+                                <td>Avenir</td>
+                                <td>—</td>
+                                <td><span class="token-ref"><code>fontSizeBody</code>, <code>fontWeightMedium</code></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -1313,6 +1336,114 @@
                 .token-ref {
                     font-family: monospace;
                     color: #C02D6E;
+                }
+
+                /* Compact typography hierarchy table */
+                .type-scale-compact {
+                    margin-top: 16px;
+                }
+                .type-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 13px;
+                }
+                .type-table th,
+                .type-table td {
+                    padding: 10px 12px;
+                    text-align: left;
+                    border-bottom: 1px solid #E0E0E0;
+                    vertical-align: middle;
+                }
+                .type-table th {
+                    background: #0000FF;
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-weight: 700;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    white-space: nowrap;
+                }
+                .type-table tbody tr:nth-child(odd) {
+                    background: #FDF7FA;
+                }
+                .type-table tbody tr:nth-child(even) {
+                    background: #FFFFFF;
+                }
+                .type-table tbody tr:hover {
+                    background: #FCEEF3;
+                }
+                .type-table td:first-child {
+                    font-family: 'Hobeaux Bold', Avenir, sans-serif;
+                    font-weight: 700;
+                    color: #0000FF;
+                    font-size: 13px;
+                    white-space: nowrap;
+                }
+                .type-cell {
+                    padding: 12px 16px;
+                }
+                .type-cell .display-sample {
+                    font-family: 'BreeSerif', Georgia, serif;
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: #0000FF;
+                }
+                .type-cell .heading-sample {
+                    font-family: 'BreeSerif', Georgia, serif;
+                    font-size: 22px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: #0000FF;
+                }
+                .type-cell .subheading-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: #0000FF;
+                }
+                .type-cell .body-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    color: #4A4A4A;
+                    max-width: 300px;
+                }
+                .type-cell .bold-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    color: #0000FF;
+                }
+                .type-cell .small-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    color: #4A4A4A;
+                }
+                .type-cell .button-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    background: #0000FF;
+                    border: none;
+                    display: inline-block;
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                }
+                .type-cell .link-sample {
+                    font-family: 'NunitoSans', system-ui, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #0000FF;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
                 }
 
                 .token-table-container {
