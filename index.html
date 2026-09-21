@@ -473,9 +473,6 @@
       gap: 0;
       max-width: 600px;
     }
-    .hero__tagline {
-      margin-top: -12px;
-    }
 
     .hero__name {
       margin: 0;
@@ -498,11 +495,13 @@
 
     .hero__ctas {
       display: flex;
-      flex-direction: column;
-      gap: var(--sp-sm);
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--sp-md);
       width: 100%;
-      max-width: 280px;
-      margin-top: var(--sp-xl);
+      max-width: 500px;
+      justify-content: center;
+      margin-top: 0;
     }
     .hero__logo-img {
       animation: logoEntrance 1s ease-out forwards;
@@ -569,14 +568,17 @@
         font-size: clamp(48px, 6vw, 64px);
       }
 
-      .hero__ctas {
+.hero__ctas {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: flex-start;
         width: auto;
+        max-width: none;
+        gap: var(--sp-md);
       }
-.hero__cta {
-      width: 100%;
-    }
+      .hero__cta {
+        width: auto;
+      }
 
     @media (prefers-reduced-motion: reduce) {
       .hero__logo-img,
@@ -719,7 +721,7 @@
     }
     @media (min-width: 1024px) {
       .portfolio__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -946,6 +948,38 @@
       background: var(--color-secondary-light);
       color: var(--color-secondary);
       border-color: var(--color-secondary);
+    }
+
+    .skills__logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--sp-lg);
+      margin-top: var(--sp-lg);
+    }
+
+    .skill-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-xs);
+    }
+
+    .skill-logo img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: var(--rd-sm);
+      background: var(--color-bg);
+      padding: var(--sp-xs);
+    }
+
+    .skill-logo span {
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      color: var(--color-text);
+      text-align: center;
     }
 
     .skill-tag .tool-icon {
@@ -1296,7 +1330,12 @@
           <h1 id="hero-title" class="hero__name" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
   <img src="assets/img/Logo ally.jpg" alt="Ally Villagómez" class="hero__logo-img" style="height: 500px; width: auto; object-fit: contain;" loading="eager">
 </h1>
-          <p class="hero__tagline hero__tagline--animate" id="hero-tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</
+
+          <div style="height: 30px;"></div>
+
+          <p class="hero__tagline hero__tagline--animate" id="hero-tagline">Estudiante de Diseño Gráfico y diseñadora en formación. Identidad visual, branding, campañas y comunicación gráfica.</p>
+
+          <div style="height: 30px;"></div>
 
           <div class="hero__ctas">
             <a href="#portfolio" class="btn btn--primary hero__cta">Ver portafolio</a>
@@ -1371,7 +1410,7 @@
 
           <!-- Proyecto 4: Santa Clara / Leche (Packaging / Editorial) -->
           <article class="project-card">
-            <img class="project-card__image" src="assets/img/envases santa clara PNG.png" alt="Proyecto Santa Clara - Packaging y editorial" loading="lazy">
+            <img class="project-card__image" src="assets/img/envases santa clara PNG.png" alt="Proyecto Santa Clara - Packaging y editorial" loading="lazy" style="object-fit: cover; object-position: center 70%;">
             <div class="project-card__content">
               <span class="project-card__category">Packaging & Editorial</span>
               <h3 class="project-card__title">Santa Clara</h3>
@@ -1470,11 +1509,25 @@
               <span class="skill-tag skill-tag--tool">Illustrator</span>
               <span class="skill-tag skill-tag--tool">After Effects</span>
               <span class="skill-tag skill-tag--tool">Maya</span>
-              <span class="skill-tag skill-tag--tool">Substance Painter</span>
-              <span class="skill-tag skill-tag--tool">ZBrush</span>
-              <span class="skill-tag skill-tag--tool">Canva</span>
-              <span class="skill-tag skill-tag--tool">CapCut</span>
               <span class="skill-tag skill-tag--tool">Figma</span>
+            </div>
+          </div>
+          <div class="skills__logos">
+            <div class="skill-logo">
+              <img src="assets/img/Logo Ilustrator.svg.webp" alt="Illustrator" loading="lazy">
+              <span>Illustrator</span>
+            </div>
+            <div class="skill-logo">
+              <img src="assets/img/Logo after.svg.webp" alt="After Effects" loading="lazy">
+              <span>After Effects</span>
+            </div>
+            <div class="skill-logo">
+              <img src="assets/img/Logo Maya.png" alt="Maya" loading="lazy">
+              <span>Maya</span>
+            </div>
+            <div class="skill-logo">
+              <img src="assets/img/Logo Figma.webp" alt="Figma" loading="lazy">
+              <span>Figma</span>
             </div>
           </div>
           </div>
