@@ -2941,12 +2941,15 @@
                     background: #FAF8F6;
                     border-radius: 8px;
                     border: 1px solid #E0E0E0;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
                 }
 
                 .token-row {
                     display: flex;
+                    flex-wrap: wrap;
                     align-items: center;
-                    gap: 12px;
+                    gap: 8px 12px;
                     margin-bottom: 8px;
                     font-size: 13px;
                     line-height: 1.5;
@@ -2962,12 +2965,15 @@
                     border-radius: 4px;
                     color: #0000FF;
                     font-weight: 500;
-                    min-width: 140px;
+                    min-width: 120px;
                     display: inline-block;
+                    flex-shrink: 0;
                 }
 
                 .token-row code:nth-child(2) {
                     color: #4A4A4A;
+                    flex: 1;
+                    min-width: 0;
                 }
 
                 .token-value {
@@ -2976,6 +2982,7 @@
                     color: #FF66CC;
                     font-weight: 500;
                     margin-left: auto;
+                    white-space: nowrap;
                 }
 
                 @media (max-width: 768px) {
