@@ -466,6 +466,23 @@
       opacity: 0.8;
     }
 
+    .hero__star-behind {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero__star-behind img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .hero__content {
       display: flex;
       flex-direction: column;
@@ -826,7 +843,7 @@
 
     .process-step {
       position: relative;
-      padding-left: var(--sp-lg);
+      padding-left: calc(var(--sp-lg) + 12px);
       background: transparent;
       border: none;
       text-align: left;
@@ -834,11 +851,11 @@
     .process-step::before {
       content: '';
       position: absolute;
-      left: calc(-1 * var(--sp-xl) - 18px);
+      left: calc(-1 * var(--sp-xl) - 24px);
       top: 10px;
-      width: 28px;
-      height: 28px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF66CC'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+      width: 40px;
+      height: 40px;
+      background-image: url("assets/img/estrella%20ally.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -848,16 +865,27 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: var(--color-secondary);
-      color: var(--color-bg);
+      width: 48px;
+      height: 48px;
+      background: transparent;
+      color: var(--color-secondary);
       font-family: var(--font-primary);
-      font-size: var(--fs-small);
+      font-size: var(--fs-body);
       font-weight: var(--fw-bold);
       border-radius: var(--rd-full);
       margin-bottom: var(--sp-xs);
-      box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 6px var(--color-secondary);
+    }
+    .process-step__number::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url("assets/img/estrella%20ally.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      z-index: -1;
     }
     .process-step__title {
       margin: 0 0 var(--sp-xs);
@@ -1404,8 +1432,8 @@
         <!-- Visual protagonista con estrella detrás -->
         <div class="hero__visual" aria-hidden="true" style="position: relative;">
           <img src="assets/img/allyfoto.JPG" alt="Ally Villagómez" loading="eager">
-          <div class="hero__star-behind" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; opacity: 0.15; pointer-events: none; z-index: 0;">
-            <img src="assets/img/estrella ally.png" alt="" style="width: 100%; height: 100%; object-fit: contain;" aria-hidden="true">
+          <div class="hero__star-behind">
+            <img src="assets/img/estrella ally.png" alt="" aria-hidden="true">
           </div>
           <img src="assets/img/allyfoto.JPG" alt="Ally Villagómez" loading="eager" style="position: relative; z-index: 1;">
         </div>
