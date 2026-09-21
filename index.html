@@ -834,14 +834,14 @@
     .process-step::before {
       content: '';
       position: absolute;
-      left: calc(-1 * var(--sp-xl) - 10px);
-      top: 8px;
-      width: 20px;
-      height: 20px;
-      background: var(--color-secondary);
-      border: 3px solid var(--color-bg);
-      border-radius: var(--rd-full);
-      box-shadow: 0 0 0 3px var(--color-secondary);
+      left: calc(-1 * var(--sp-xl) - 18px);
+      top: 10px;
+      width: 28px;
+      height: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF66CC'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       z-index: 1;
     }
     .process-step__number {
@@ -858,10 +858,6 @@
       border-radius: var(--rd-full);
       margin-bottom: var(--sp-xs);
       box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 6px var(--color-secondary);
-    }
-
-    .process-step::before {
-      display: none;
     }
     .process-step__title {
       margin: 0 0 var(--sp-xs);
@@ -1405,16 +1401,13 @@
     <!-- HERO -->
     <section id="hero" aria-labelledby="hero-title">
       <div class="hero__inner">
-        <!-- Visual protagonista -->
-        <div class="hero__visual" aria-hidden="true">
+        <!-- Visual protagonista con estrella detrás -->
+        <div class="hero__visual" aria-hidden="true" style="position: relative;">
           <img src="assets/img/allyfoto.JPG" alt="Ally Villagómez" loading="eager">
-        </div>
-
-        <!-- Estrellas decorativas hero -->
-        <div class="hero__stars" aria-hidden="true">
-          <span class="star"><img src="assets/img/estrella ally.png" alt="" class="ds-star-img" loading="lazy" aria-hidden="true"></span>
-          <span class="star"><img src="assets/img/estrella ally.png" alt="" class="ds-star-img" loading="lazy" aria-hidden="true"></span>
-          <span class="star"><img src="assets/img/estrella ally.png" alt="" class="ds-star-img" loading="lazy" aria-hidden="true"></span>
+          <div class="hero__star-behind" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; opacity: 0.15; pointer-events: none; z-index: 0;">
+            <img src="assets/img/estrella ally.png" alt="" style="width: 100%; height: 100%; object-fit: contain;" aria-hidden="true">
+          </div>
+          <img src="assets/img/allyfoto.JPG" alt="Ally Villagómez" loading="eager" style="position: relative; z-index: 1;">
         </div>
 
         <!-- Contenido hero -->
@@ -1441,10 +1434,6 @@
     <section id="about" aria-labelledby="about-title" style="background: var(--color-primary); color: var(--color-bg);">
       <div class="container">
         <header class="section__header">
-          <div class="about__stars" style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
-            <span class="star" style="width: 36px; height: 36px;"><img src="assets/img/estrella ally.png" alt="" class="ds-star-img" loading="lazy" aria-hidden="true"></span>
-            <span class="star" style="width: 36px; height: 36px;"><img src="assets/img/estrella ally.png" alt="" class="ds-star-img" loading="lazy" aria-hidden="true"></span>
-          </div>
           <h2 id="about-title" class="section__title" style="color: var(--color-bg);">Sobre mí</h2>
           <p class="section__subtitle" style="color: var(--color-bg);">Quién soy, qué estudio y cómo entiendo el diseño</p>
         </header>
