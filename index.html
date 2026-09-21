@@ -950,6 +950,58 @@
       border-color: var(--color-secondary);
     }
 
+    .skills__tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-md);
+    }
+    @media (max-width: 1024px) {
+      .skills__tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .skills__tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skill-card {
+      background: var(--color-bg);
+      border: 1px solid rgba(49, 85, 166, 0.1);
+      border-radius: var(--rd-md);
+      padding: var(--sp-lg) var(--sp-md);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--elev-2);
+      border-color: var(--color-secondary);
+    }
+    .skill-card__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--sp-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--rd-md);
+      color: var(--color-primary);
+    }
+    .skill-card__icon svg {
+      width: 28px;
+      height: 28px;
+    }
+    .skill-card__name {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      color: var(--color-text);
+    }
+
     .skills__logos {
       display: flex;
       flex-wrap: wrap;
@@ -1505,35 +1557,57 @@
           </div>
 <div class="skills__group">
             <h3 class="skills__group-title">Herramientas</h3>
-            <div class="skills__tags">
-              <span class="skill-tag skill-tag--tool">Illustrator</span>
-              <span class="skill-tag skill-tag--tool">Photoshop</span>
-              <span class="skill-tag skill-tag--tool">After Effects</span>
-              <span class="skill-tag skill-tag--tool">Maya</span>
-              <span class="skill-tag skill-tag--tool">Figma</span>
+            <div class="skills__tools-grid">
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+                </div>
+                <h4 class="skill-card__name">Illustrator</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h4 class="skill-card__name">Photoshop</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                </div>
+                <h4 class="skill-card__name">After Effects</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+                </div>
+                <h4 class="skill-card__name">Maya</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16.5 15.5 12 11l-4.5 4.5"/><path d="M17.5 10.5 12 5l-5.5 5.5"/><path d="M6.5 15.5 11 11l-4.5 4.5"/><path d="M5.5 10.5 10 5l4.5 5.5"/></svg>
+                </div>
+                <h4 class="skill-card__name">Figma</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+                </div>
+                <h4 class="skill-card__name">Substance Painter</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                </div>
+                <h4 class="skill-card__name">Canva</h4>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <h4 class="skill-card__name">CapCut</h4>
+              </article>
             </div>
           </div>
-          <div class="skills__logos">
-            <div class="skill-logo">
-              <img src="assets/img/Logo Ilustrator.svg.webp" alt="Illustrator" loading="lazy">
-              <span>Illustrator</span>
-            </div>
-            <div class="skill-logo">
-              <img src="assets/img/Logo photoshop.svg.webp" alt="Photoshop" loading="lazy">
-              <span>Photoshop</span>
-            </div>
-            <div class="skill-logo">
-              <img src="assets/img/Logo after.svg.webp" alt="After Effects" loading="lazy">
-              <span>After Effects</span>
-            </div>
-            <div class="skill-logo">
-              <img src="assets/img/Logo Maya.png" alt="Maya" loading="lazy">
-              <span>Maya</span>
-            </div>
-            <div class="skill-logo">
-              <img src="assets/img/Logo Figma.webp" alt="Figma" loading="lazy">
-              <span>Figma</span>
-            </div>
           </div>
           </div>
         </div>
