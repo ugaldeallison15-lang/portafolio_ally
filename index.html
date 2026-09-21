@@ -2230,24 +2230,26 @@
 
     })();
 
-    // Tiny star cursor
+    // Star cursor (replaces default)
     (function() {
       if (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+      document.body.style.cursor = 'none';
+
       const cursor = document.createElement('div');
-      cursor.style.cssText = 'position:fixed;top:0;left:0;width:14px;height:14px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .08s linear;';
-      cursor.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FF66CC"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+      cursor.style.cssText = 'position:fixed;top:0;left:0;width:24px;height:24px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .08s linear;';
+      cursor.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="#FF66CC"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
       document.body.appendChild(cursor);
 
       let x = 0, y = 0;
       document.addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; });
-      function animate() { cursor.style.transform = `translate(${x-7}px,${y-7}px)`; requestAnimationFrame(animate); }
+      function animate() { cursor.style.transform = `translate(${x-12}px,${y-12}px)`; requestAnimationFrame(animate); }
       animate();
 
       const hoverables = 'a,button,.btn,.link,.project-card,.skill-card,.social-icon,.nav__link,.nav__toggle,.modal__close,.project-card__link,[role="button"]';
       document.querySelectorAll(hoverables).forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(1.8)');
-        el.addEventListener('mouseleave', () => cursor.style.transform = cursor.style.transform.replace(' scale(1.8)',''));
+        el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(1.5)');
+        el.addEventListener('mouseleave', () => cursor.style.transform = cursor.style.transform.replace(' scale(1.5)',''));
       });
     })();
   </script>
