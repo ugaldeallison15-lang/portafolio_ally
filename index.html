@@ -1002,36 +1002,53 @@
       color: var(--color-text);
     }
 
-    .skills__logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--sp-lg);
-      margin-top: var(--sp-lg);
+    .skills__tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-md);
+    }
+    @media (max-width: 1024px) {
+      .skills__tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .skills__tools-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .skill-logo {
+    .skill-card {
+      background: var(--color-bg);
+      border: 1px solid rgba(49, 85, 166, 0.1);
+      border-radius: var(--rd-md);
+      padding: var(--sp-lg) var(--sp-md);
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: var(--sp-xs);
+      gap: var(--sp-sm);
+      transition: all 0.2s ease;
     }
-
-    .skill-logo img {
-      width: 64px;
-      height: 64px;
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--elev-2);
+      border-color: var(--color-secondary);
+    }
+    .skill-card__logo {
+      width: 48px;
+      height: 48px;
       object-fit: contain;
       border-radius: var(--rd-sm);
       background: var(--color-bg);
       padding: var(--sp-xs);
     }
-
-    .skill-logo span {
+    .skill-card__name {
       font-family: var(--font-secondary);
       font-size: var(--fs-small);
       font-weight: var(--fw-medium);
       color: var(--color-text);
-      text-align: center;
+    }
     }
 
     .skill-tag .tool-icon {
@@ -1112,8 +1129,8 @@
 
     /* Footer base */
     .footer {
-      background: var(--color-bg-warm);
-      border-top: 1px solid rgba(49, 85, 166, 0.1);
+      background: var(--color-primary);
+      border-top: none;
       padding: var(--sp-xxl) var(--sp-md);
       text-align: center;
     }
@@ -1126,13 +1143,13 @@
       font-family: var(--font-primary);
       font-size: var(--fs-heading);
       font-weight: var(--fw-bold);
-      color: var(--color-text);
+      color: #FFFFFF;
     }
     .footer__tagline {
       margin: 0 0 var(--sp-lg);
       font-family: var(--font-secondary);
       font-size: var(--fs-body);
-      color: var(--color-text-secondary);
+      color: #FFFFFF;
     }
     .footer__nav {
       display: flex;
@@ -1140,6 +1157,14 @@
       justify-content: center;
       gap: var(--sp-md);
       margin-bottom: var(--sp-lg);
+    }
+    .footer__nav .nav__link {
+      color: #FFFFFF;
+    }
+    .footer__nav .nav__link:hover,
+    .footer__nav .nav__link:focus {
+      color: var(--color-secondary-light);
+      background: transparent;
     }
     .footer__stars {
       display: flex;
@@ -1150,6 +1175,7 @@
       width: 20px;
       height: 20px;
       opacity: 0.7;
+      color: #FFFFFF;
     }
 
     /* ========================================
@@ -1555,60 +1581,54 @@
               <span class="skill-tag">Contenido para redes sociales</span>
             </div>
           </div>
-<div class="skills__group">
+          <div class="skills__group">
             <h3 class="skills__group-title">Herramientas</h3>
             <div class="skills__tools-grid">
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
-                </div>
-                <h4 class="skill-card__name">Illustrator</h4>
+                <img src="assets/img/Logo Ilustrator.svg.webp" alt="Illustrator" loading="lazy" class="skill-card__logo">
+                <span class="skill-card__name">Illustrator</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-                </div>
-                <h4 class="skill-card__name">Photoshop</h4>
+                <img src="assets/img/Logo photoshop.svg.webp" alt="Photoshop" loading="lazy" class="skill-card__logo">
+                <span class="skill-card__name">Photoshop</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                </div>
-                <h4 class="skill-card__name">After Effects</h4>
+                <img src="assets/img/Logo after.svg.webp" alt="After Effects" loading="lazy" class="skill-card__logo">
+                <span class="skill-card__name">After Effects</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
-                </div>
-                <h4 class="skill-card__name">Maya</h4>
+                <img src="assets/img/Logo Maya.png" alt="Maya" loading="lazy" class="skill-card__logo">
+                <span class="skill-card__name">Maya</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16.5 15.5 12 11l-4.5 4.5"/><path d="M17.5 10.5 12 5l-5.5 5.5"/><path d="M6.5 15.5 11 11l-4.5 4.5"/><path d="M5.5 10.5 10 5l4.5 5.5"/></svg>
-                </div>
-                <h4 class="skill-card__name">Figma</h4>
+                <img src="assets/img/Logo Figma.webp" alt="Figma" loading="lazy" class="skill-card__logo">
+                <span class="skill-card__name">Figma</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+                <div class="skill-card__logo" style="background: #FF66CC; display: flex; align-items: center; justify-content: center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
                 </div>
-                <h4 class="skill-card__name">Substance Painter</h4>
+                <span class="skill-card__name">Substance Painter</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <div class="skill-card__logo" style="background: #FF66CC; display: flex; align-items: center; justify-content: center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
                 </div>
-                <h4 class="skill-card__name">Canva</h4>
+                <span class="skill-card__name">ZBrush</span>
               </article>
               <article class="skill-card">
-                <div class="skill-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <div class="skill-card__logo" style="background: #FF66CC; display: flex; align-items: center; justify-content: center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                 </div>
-                <h4 class="skill-card__name">CapCut</h4>
+                <span class="skill-card__name">Canva</span>
+              </article>
+              <article class="skill-card">
+                <div class="skill-card__logo" style="background: #FF66CC; display: flex; align-items: center; justify-content: center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span class="skill-card__name">CapCut</span>
               </article>
             </div>
-          </div>
-          </div>
           </div>
         </div>
       </div>
