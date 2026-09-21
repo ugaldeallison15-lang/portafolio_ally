@@ -451,12 +451,12 @@
             background: #F3F1FF;
         }
 
-        /* Token rows in component specs */
-.token-row {
-                    display: grid;
-                    grid-template-columns: 1fr auto;
-                    gap: 12px;
+/* Token rows in component specs */
+                .token-row {
+                    display: flex;
+                    flex-wrap: wrap;
                     align-items: center;
+                    gap: 8px 12px;
                     margin-bottom: 8px;
                     font-size: 13px;
                     line-height: 1.5;
@@ -468,23 +468,21 @@
                     color: #0000FF;
                     font-weight: 500;
                     font-size: 12px;
-                    display: block;
+                    display: inline-block;
                     border: 1px solid #E0E0E0;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    max-width: 100%;
+                    flex-shrink: 0;
                 }
                 .token-row code:nth-child(2) {
                     color: #4A4A4A;
-                    justify-self: center;
+                    flex: 1;
+                    min-width: 0;
                 }
                 .token-value {
                     font-family: monospace;
                     font-size: 13px;
                     color: #FF66CC;
                     font-weight: 500;
-                    justify-self: end;
+                    margin-left: auto;
                     white-space: nowrap;
                 }
 
@@ -3182,6 +3180,8 @@
                     position: sticky;
                     top: 24px;
                     max-width: 340px;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
                 }
                 .card-tokens-panel h4 {
                     margin: 0 0 12px;
@@ -3191,7 +3191,36 @@
                     color: #0000FF;
                 }
                 .card-tokens-panel .token-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 8px 12px;
                     margin-bottom: 6px;
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+                .card-tokens-panel .token-row code:first-child {
+                    background: #FFFFFF;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    color: #0000FF;
+                    font-weight: 500;
+                    min-width: 120px;
+                    display: inline-block;
+                    flex-shrink: 0;
+                }
+                .card-tokens-panel .token-row code:nth-child(2) {
+                    color: #4A4A4A;
+                    flex: 1;
+                    min-width: 0;
+                }
+                .card-tokens-panel .token-value {
+                    font-family: monospace;
+                    font-size: 13px;
+                    color: #FF66CC;
+                    font-weight: 500;
+                    margin-left: auto;
+                    white-space: nowrap;
                 }
 
                 .card-usage {
@@ -3500,6 +3529,8 @@
                 height: fit-content;
                 position: sticky;
                 top: 24px;
+                overflow-wrap: anywhere;
+                word-break: break-word;
             }
 
             .input-tokens-panel h4 {
@@ -3743,6 +3774,8 @@
             height: fit-content;
             position: sticky;
             top: 24px;
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .link-tokens-panel h4 {
