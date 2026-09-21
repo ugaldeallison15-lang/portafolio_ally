@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ally Villagómez — Diseñadora Gráfica</title>
   <meta name="description" content="Portafolio de Ally Villagómez, diseñadora gráfica especializada en identidad visual, branding, campañas y comunicación gráfica.">
+  <base href="/portafolio_ally/">
 
   <style>
     /* ========================================
@@ -671,7 +672,7 @@
     .section__title {
       margin: 0 0 var(--sp-sm);
       font-family: var(--font-primary);
-      font-size: var(--fs-heading);
+      font-size: var(--fs-display);
       font-weight: var(--fw-bold);
       line-height: var(--lh-tight);
       color: var(--color-text);
@@ -856,19 +857,34 @@
       justify-content: center;
       width: 60px;
       height: 60px;
-      background-image: url("assets/img/estrella%20ally.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: transparent;
       color: #FFFFFF;
       font-family: var(--font-primary);
       font-size: var(--fs-small);
       font-weight: var(--fw-bold);
       border-radius: var(--rd-full);
       margin-bottom: var(--sp-xs);
-      color: #FFFFFF;
+      position: relative;
     }
+    .process-step__number .star-svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .process-step__number .star-number {
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+    }
+    /* Step 1 - Primary blue star */
+    .process-step:nth-child(1) .process-step__number .star-svg { fill: var(--color-primary); }
+    /* Step 2 - Secondary pink star */
+    .process-step:nth-child(2) .process-step__number .star-svg { fill: var(--color-secondary); }
+    /* Step 3 - Primary light blue star */
+    .process-step:nth-child(3) .process-step__number .star-svg { fill: var(--color-primary-light); }
+    /* Step 4 - Secondary light pink star */
+    .process-step:nth-child(4) .process-step__number .star-svg { fill: var(--color-secondary-light); }
     /* Eliminado ::before del número (ya no necesita estrella de fondo) */
     .process-step__number::before {
       display: none;
@@ -1214,12 +1230,16 @@
     .contact__btn {
       min-width: 200px;
     }
-    .contact__social {
+    .contact__actions {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: var(--sp-sm);
-      margin-top: var(--sp-sm);
+    }
+    .contact__social {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-md);
     }
     .contact__handle {
       margin: 0;
@@ -1724,22 +1744,34 @@
         </header>
         <div class="process__steps">
           <article class="process-step">
-            <span class="process-step__number">1</span>
+            <span class="process-step__number" aria-hidden="true">
+              <svg class="star-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="star-number">1</span>
+            </span>
             <h3 class="process-step__title">Investigación</h3>
             <p class="process-step__description">Análisis del contexto, competencia, audiencia y objetivos del proyecto.</p>
           </article>
           <article class="process-step">
-            <span class="process-step__number">2</span>
+            <span class="process-step__number" aria-hidden="true">
+              <svg class="star-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="star-number">2</span>
+            </span>
             <h3 class="process-step__title">Conceptualización</h3>
             <p class="process-step__description">Definición de la idea central, narrativa visual y dirección creativa.</p>
           </article>
           <article class="process-step">
-            <span class="process-step__number">3</span>
+            <span class="process-step__number" aria-hidden="true">
+              <svg class="star-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="star-number">3</span>
+            </span>
             <h3 class="process-step__title">Desarrollo visual</h3>
             <p class="process-step__description">Creación del sistema gráfico: identidad, piezas, aplicaciones y variaciones.</p>
           </article>
           <article class="process-step">
-            <span class="process-step__number">4</span>
+            <span class="process-step__number" aria-hidden="true">
+              <svg class="star-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="star-number">4</span>
+            </span>
             <h3 class="process-step__title">Refinamiento</h3>
             <p class="process-step__description">Ajustes finales, pruebas de uso, documentación y entrega al cliente.</p>
           </article>
@@ -1867,8 +1899,8 @@
           <div class="contact__card">
             <p class="contact__text">Estoy disponible para colaboraciones, proyectos freelance y oportunidades profesionales. Cuéntame tu idea.</p>
             <div class="contact__actions">
+              <p class="contact__handle">ally_gvz</p>
               <div class="contact__social">
-                <p class="contact__handle">ally_gvz</p>
                 <a href="https://github.com/ugaldeallison15-lang" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.305-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               </a>
