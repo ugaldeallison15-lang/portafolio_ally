@@ -843,54 +843,40 @@
 
     .process-step {
       position: relative;
-      padding-left: calc(var(--sp-lg) + 12px);
+      padding-left: calc(var(--sp-md) + 8px);
       background: transparent;
       border: none;
       text-align: left;
     }
-    .process-step::before {
-      content: '';
-      position: absolute;
-      left: calc(-1 * var(--sp-xl) - 24px);
-      top: 10px;
-      width: 40px;
-      height: 40px;
-      background-image: url("assets/img/estrella%20ally.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 1;
-    }
+    /* Eliminado el ::before decorativo (estrella en primera columna) */
+
     .process-step__number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: transparent;
-      color: var(--color-secondary);
-      font-family: var(--font-primary);
-      font-size: var(--fs-body);
-      font-weight: var(--fw-bold);
-      border-radius: var(--rd-full);
-      margin-bottom: var(--sp-xs);
-    }
-    .process-step__number::before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
+      width: 36px;
+      height: 36px;
       background-image: url("assets/img/estrella%20ally.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      position: absolute;
-      z-index: -1;
+      background-color: transparent;
+      color: #FFFFFF;
+      font-family: var(--font-primary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-bold);
+      border-radius: var(--rd-full);
+      margin-bottom: var(--sp-xs);
+      color: #FFFFFF;
+    }
+    /* Eliminado ::before del número (ya no necesita estrella de fondo) */
+    .process-step__number::before {
+      display: none;
     }
     .process-step__title {
       margin: 0 0 var(--sp-xs);
       font-family: var(--font-primary);
-      font-size: var(--fs-subheading);
+      font-size: var(--fs-small);
       font-weight: var(--fw-bold);
       line-height: var(--lh-tight);
       color: var(--color-text);
@@ -906,24 +892,12 @@
 
     @media (min-width: 768px) {
       .process__steps {
-        padding-left: calc(var(--sp-xl) + 20px);
-      }
-      .process__steps::before {
-        left: calc(var(--sp-xl) + 18px);
-      }
-      .process-step::before {
-        left: calc(-1 * var(--sp-xl) - 40px);
+        padding-left: calc(var(--sp-lg) + 16px);
       }
     }
     @media (min-width: 1024px) {
       .process__steps {
-        padding-left: calc(var(--sp-xl) + 40px);
-      }
-      .process__steps::before {
-        left: calc(var(--sp-xl) + 38px);
-      }
-      .process-step::before {
-        left: calc(-1 * var(--sp-xl) - 60px);
+        padding-left: calc(var(--sp-xl) + 20px);
       }
     }
 
@@ -1060,12 +1034,12 @@
       background: var(--color-bg);
       border: 1px solid rgba(49, 85, 166, 0.1);
       border-radius: var(--rd-md);
-      padding: var(--sp-lg) var(--sp-md);
+      padding: var(--sp-xxl) var(--sp-lg);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: var(--sp-sm);
+      gap: var(--sp-lg);
       transition: all 0.2s ease;
     }
     .skill-card:hover {
@@ -1074,12 +1048,12 @@
       border-color: var(--color-secondary);
     }
     .skill-card__logo {
-      width: 48px;
-      height: 48px;
+      width: 110px;
+      height: 110px;
       object-fit: contain;
       border-radius: var(--rd-sm);
       background: var(--color-bg);
-      padding: var(--sp-xs);
+      padding: var(--sp-md);
     }
     .skill-card__name {
       font-family: var(--font-secondary);
