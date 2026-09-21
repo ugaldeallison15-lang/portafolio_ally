@@ -521,7 +521,10 @@
       margin-top: 0;
     }
     .hero__logo-img {
-      animation: logoEntrance 1s ease-out forwards;
+      animation: logoEntrance 1s ease-out forwards, logoFloat 4s ease-in-out infinite;
+    }
+    .hero__logo-img:hover {
+      animation: logoEntrance 1s ease-out forwards, logoPulse 1.5s ease-in-out infinite;
     }
 
     .hero__tagline--animate {
@@ -854,8 +857,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 60px;
+      height: 60px;
       background-image: url("assets/img/estrella%20ally.png");
       background-size: contain;
       background-repeat: no-repeat;
@@ -1361,6 +1364,24 @@
       100% {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes logoPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
       }
     }
   </style>
