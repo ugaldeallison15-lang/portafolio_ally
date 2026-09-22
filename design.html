@@ -2949,6 +2949,108 @@
             </style>
         </section>
 
+    <div class="component-section">
+        <h3>Card</h3>
+        <p class="section-intro">Tarjetas y contenedores con <strong>apariencia limpia y cercana</strong>. Fondo cálido, bordes sutiles y radio predominante para que el contenido —imágenes y proyectos— sea protagonista.</p>
+
+        <div class="card-usage">
+            <h4>Aplicación en el sistema</h4>
+            <div class="card-grid">
+                <div class="card-example-small">
+                    <div class="card-image-small"></div>
+                    <div class="card-content-small">
+                        <h5 class="card-title-small">Proyecto Uno</h5>
+                        <p class="card-desc-small">Breve descripción del proyecto...</p>
+                    </div>
+                </div>
+                <div class="card-example-small card-warm">
+                    <div class="card-image-small"></div>
+                    <div class="card-content-small">
+                        <h5 class="card-title-small">Proyecto Dos</h5>
+                        <p class="card-desc-small">Otro proyecto con fondo cálido...</p>
+                    </div>
+                </div>
+                <div class="card-example-small">
+                    <div class="card-image-small"></div>
+                    <div class="card-content-small">
+                        <h5 class="card-title-small">Proyecto Tres</h5>
+                        <p class="card-desc-small">Tercer proyecto en la retícula...</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-usage-note">Las tarjetas se organizan en la <strong>retícula de 12/8/1 columnas</strong> (desktop/tablet/móvil) con <code>spacing.md</code> (24px) de gap. Fondo alternativo <code>colors.secondaryLight</code> para variantes cálidas.</p>
+        </div>
+
+        <style>
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+                margin-bottom: 14px;
+            }
+
+            .card-example-small {
+                background: #FAF8F6;
+                border: 1px solid #0000FF;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(49, 85, 166, 0.08);
+            }
+
+            .card-example-small.card-warm {
+                background: #FFB3E0;
+                border-color: #FF66CC;
+            }
+
+            .card-image-small {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                background: #E8EDF5;
+            }
+
+            .card-warm .card-image-small {
+                background: #FDE8F0;
+            }
+
+            .card-content-small {
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .card-title-small {
+                margin: 0;
+                font-family: 'BreeSerif', Georgia, serif;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.3;
+                color: #0000FF;
+            }
+
+            .card-desc-small {
+                margin: 0;
+                font-family: 'NunitoSans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #4A4A4A;
+            }
+
+            .card-usage-note {
+                margin: 0;
+                font-size: 14px;
+                color: #4A4A4A;
+            }
+
+            @media (max-width: 768px) {
+                .card-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </div>
+    </section>
 
     <div class="component-section">
         <h3>Input</h3>
